@@ -1,6 +1,6 @@
 # ACCORE
 
-Depuis le version 2013, AutoCAD dispose d'une version de ligne de commande d'AutoCAD qui peut vous aider à accélérer considérablement le traitement par lots des dessins en complément d'ObjectDBX.
+Depuis le version 2013, AutoCAD dispose d'une version de ligne de commande d'AutoCAD qui peut vous aider à accélérer considérablement le traitement par lots des dessins.
 Non supporté officiellement par Autodesk, il n'y a pas de documentation, je vous propose donc une petite immersion. 
 
 ## Principes d'utilisation
@@ -58,6 +58,26 @@ Plusieurs constats:
 
 Pour l'utilisation directe dans la console, je vais m'arretter la, car c'est en script que c'est le plus intérréssant.
 
+## .bat et .scr 
+Le principe, le ".bat" démarre accoreconsole dans la console Windows, en lui donnant le chemin du fichier à éditer, puis éxécute le script inscrit dans le ".scr".
+Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
+Ce sont de simples fichiers texte (utf-8) que vous pouvez éditer avec Notepad ou votre éditeur de texte préféré.
+
+Plassons un dwg nommé Test.dwg dans un dossier "C:\Data"
+
+Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr"
+
+```
+(setvar 'clayer "0")
+z
+et
+_qsave
+
+```
+
+Puis le "Test.bat"
+
+```accoreconsole.exe /i "C:\Data\Test.dwg" /s "C:\Data\Test.scr"```
 
 
 ### Root
