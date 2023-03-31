@@ -36,7 +36,7 @@ Il accepte six commutateurs de ligne de commande :
 
 Pour raccourcir nos futurs scripts, nous pouvons rajouter au Path Windows le dossier comme ceci.
 
-''' setx Path "%Path%;C:\Program Files\Autodesk\AutoCAD 2015" '''
+``` setx Path "%Path%;C:\Program Files\Autodesk\AutoCAD 2015" ```
 
 Redémarrer la console pour la prise en compte. Maintenant, accoreconsole.exe suffira.
 
