@@ -20,7 +20,7 @@ Ici pour une 2015.
 
 Le simple fait de l'exécuter dans la console (cmd.exe), affichera les commutateurs de ligne de commande qui peuvent être utilisés avec lui, fait un test avec le dessin 8th_floor.dwg et le script test.scr et ouvre un session Autocad sur dessin1.dwg.
 
-![](img/illu1.png) 
+![](img/Illu1.png) 
 
 Il accepte six commutateurs de ligne de commande :
 
