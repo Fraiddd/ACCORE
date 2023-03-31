@@ -42,9 +42,23 @@ Redémarrer la console pour la prise en compte. Maintenant, accoreconsole.exe su
 
 Je tiens à prévenir tout de suite, que travailler avec accore, c'est le faire sans filet. Aucun message d'erreur, pas de retours en arrière possible ...
 
-Nous pouvons donc dessinez directement dans la console.
+Nous pouvons donc dessiner directement dans la console.
 
 ![](img/Illu2.png)
+
+Plusieurs constats:
+
+  - Double les messages de Commande. (plutôt désagréable)
+
+  - Accepte les commandes françaises. (une surprise)
+
+  - Cause en Français.
+
+  - Ne demande pas d'enregistrer avant de quitter. 
+
+Pour l'utilisation directe dans la console, je vais m'arretter la, car c'est en script que c'est le plus intérréssant.
+
+
 
 ### Root
 
