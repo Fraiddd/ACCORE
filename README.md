@@ -1,24 +1,22 @@
 # ACCORE
 
 Depuis le version 2013, AutoCAD dispose d'une version de ligne de commande d'AutoCAD qui peut vous aider à accélérer considérablement le traitement par lots des dessins en complément d'ObjectDBX.
-Non supporté officiellement par Autodesk, il n'y a pas de documentation. 
+Non supporté officiellement par Autodesk, il n'y a pas de documentation, je vous propose donc une petite immersion. 
 
-## Principe d'utilisation
+## Principes d'utilisation
 ### Ligne de commande
 
 Dans le dossier d'installation d'AutoCAD, vous pouvez trouver le "AccoreConsole.exe". 
 
-Copier/Coller ceci dans la barre de commande Autocad :
-
-(findfile "accoreconsole.exe")
+Copier/Coller (findfile "accoreconsole.exe") dans la barre de commande Autocad :
 
 vous retourne le chemin d'accoreconsole.exe
 
 "C:\\Program Files\\Autodesk\\AutoCAD 2015\\accoreconsole.exe"
 
-Ici pour une 2015.
+Ici pour une 2015. (Copier/Coller ce chemin dans cmd.exe)
 
-Le simple fait de l'exécuter dans la console (cmd.exe), affichera les commutateurs de ligne de commande qui peuvent être utilisés avec lui, fait un test avec le dessin 8th_floor.dwg et le script test.scr et ouvre un session Autocad sur dessin1.dwg.
+Le simple fait de l'exécuter dans la console, affichera les commutateurs de ligne de commande qui peuvent être utilisés avec lui, un exemple de script et ouvre une session Autocad sur Dessin1.dwg.
 
 ![](img/Illu1.png) 
 
@@ -28,7 +26,7 @@ Il accepte six commutateurs de ligne de commande :
 
 2) /s : permet de spécifier le chemin d'accès au fichier de script.
 
-3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système.(optionnel, en/US par defaut)
+3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système.(optionnel)
 
 4) /isolate : utilisé pour empêcher les modifications apportées aux variables système d'affecter AutoCAD normal.(optionnel)
 
@@ -36,12 +34,17 @@ Il accepte six commutateurs de ligne de commande :
 
 6) /p[rofile] permet de spécifier le nom d'un profil AutoCAD à utiliser lors de l'ouverture du fichier DWG. (optionnel, apparu avec la version 2015)
 
+Pour raccourcir nos futurs scripts, nous pouvons rajouter au Path Windows le dossier comme ceci.
 
+setx Path "%Path%;C:\Program Files\Autodesk\AutoCAD 2015"
 
+Redémarrer la console pour la prise en compte. Maintenant, accoreconsole.exe suffira.
 
+Je tiens à prévenir tout de suite, que travailler avec accore, c'est le faire sans filet. Aucun message d'erreur, pas de retours en arrière possible ...
 
+Nous pouvons donc dessinez directement dans la console.
 
-
+![](img/Illu2.png)
 
 ### Root
 
