@@ -40,7 +40,7 @@ Pour raccourcir nos futurs scripts, nous pouvons rajouter au Path Windows le dos
 
 Redémarrer la console pour la prise en compte. Maintenant, accoreconsole.exe suffira.
 
-Je tiens à prévenir tout de suite, que travailler avec accore, c'est le faire sans filet. Aucun message d'erreur, pas de retours en arrière possible. Il est donc conseillé de faire des essais, et de sauvegarder son travail en prévention. Nous éviterons aussi de modifier des fichiers de façon récursive (dans les dossiers situé dans un dossier).
+Il est donc conseillé de faire des essais, et de sauvegarder son travail en prévention, même si un .bak est créer. Nous éviterons aussi de modifier des fichiers de façon récursive (dans les dossiers situé dans un dossier).
 
 Mais avant cela testons comment nous pouvons dessiner directement dans la console. Un rectangle de 100x100.
 
@@ -99,15 +99,17 @@ On double clic sur Test.bat
 
 La console s'ouvre pendant une seconde et se referme.
 
+Un fichier .bak est apparru.
+
 Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été éffectué.
 
 Voyons maintenant comment modifier tout les dwg d'un dossier.
 
 Pour cela nous utiliserons trois solutions.
 
-  - Une boucle dans le .bat avec FOR IN DO, la plus éfficiante, mais parfois trop.
+  - Une boucle dans le .bat avec FOR IN DO.
 
-  - Un programme Autolisp, plus lent, mais plus sûre.
+  - Un programme Autolisp.
 
   - Un programme Python.
 
@@ -115,7 +117,7 @@ Pour cela nous utiliserons trois solutions.
 
 Créer un dossier contenant un dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
 
-Toujours pour alléger l'écriture, nous allons placer le pointeur de la console sur le dossier avec la commande cd puis lancer notre script. 
+Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier avec la commande cd puis lancer notre script. 
 
 Donc dans le .bat
 ```
@@ -124,11 +126,15 @@ cd C:\Data\TMP\dwg
 for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s cl0Zet.scr
 ```
 
-Pour le détail d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
+Pour les détails d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for). Si vraiment vous voulez allez aussi dans les sous-dossier (récursif) ('dir /s /b "*.dwg"').
 
 Rien à changer dans le scr.
 
 Double cliquez sur le .bat, la console s'ouvre le temps que tout les dossiers soient traités.
+
+Si certain apprécie l'apparition de la console, ce n'est pas mon cas. On verras qu'en Autolisp nous pouvons la cachée.
+
+
 
 
 ## Root
