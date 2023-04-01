@@ -85,6 +85,12 @@ Puis le "Test.bat".
 
 ```accoreconsole.exe /i "C:\Data\Test.dwg" /s "C:\Data\Test.scr"```
 
+Si vous n'utilser jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien Fichier de commande Windows (.bat). Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci
+```
+assoc .bat=cmdfile
+ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
+```
+
 
 ### Root
 
