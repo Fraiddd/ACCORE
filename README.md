@@ -63,7 +63,7 @@ Le principe, le ".bat" démarre accoreconsole dans la console Windows, en lui do
 Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
 Ce sont de simples fichiers texte (utf-8) que vous pouvez éditer avec Notepad ou votre éditeur de texte préféré.
 
-Plassons un dwg nommé Test.dwg dans un dossier "C:\Data".
+Plassons un dwg nommé Test.dwg (avec un objet et un calque courant) dans un dossier "C:\Data".
 
 Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr" dans lequel nous écrivons le script.
 
@@ -75,7 +75,7 @@ Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.
 
 ```
 (setvar 'clayer "0")
-z
+zoom
 et
 _qsave
 
@@ -83,9 +83,11 @@ _qsave
 
 Puis le "Test.bat".
 
+Qui lance accoreconsole.exe, avec le dessin "C:\Data\Test.dwg" et applique le script "C:\Data\Test.scr".
+
 ```accoreconsole.exe /i "C:\Data\Test.dwg" /s "C:\Data\Test.scr"```
 
-Si vous n'utilser jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien Fichier de commande Windows (.bat). Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci
+Si vous n'utilsez jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien Fichier de commande Windows (.bat). Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci
 ```
 assoc .bat=cmdfile
 ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
