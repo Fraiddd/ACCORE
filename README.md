@@ -62,7 +62,7 @@ Pour l'utilisation directe dans la console, je vais m'arretter la, car c'est en 
 
 Le principe, le ".bat" démarre accoreconsole dans la console Windows, en lui donnant le chemin du fichier à éditer, puis éxécute le script inscrit dans le ".scr".
 Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
-Ce sont de simples fichiers texte (utf-8) que vous pouvez éditer avec Notepad ou votre éditeur de texte préféré.
+Ce sont de simples fichiers texte (utf-8) que vous pouvez éditer avec Notepad ou votre éditeur de texte préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
 
 Plaçons un dwg nommé Test.dwg (avec un objet et un calque Test courant) dans un dossier "C:\Data".
 
@@ -88,25 +88,50 @@ Qui lance accoreconsole.exe, avec le dessin "C:\Data\Test.dwg" et applique le sc
 
 ```accoreconsole.exe /i C:\Data\Test.dwg /s C:\Data\Test.scr```
 
-Si vous n'utilsez jammais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien Fichier de commande Windows (.bat). Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci et fermez la console.
+Si les chemins contiennent des espaces, il faut les entourer par des guillemets.
+
+Si vous n'utilsez jammais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien "Fichier de commande Windows (.bat)". Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci et fermez la console.
 ```
 assoc .bat=cmdfile
 ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
 ```
 On double clic sur Test.bat
+
 La console s'ouvre pendant une seconde et se referme.
+
 Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été éffectué.
 
 Voyons maintenant comment modifier tout les dwg d'un dossier.
-Pour cela nous utiliserons deux solutions.
+
+Pour cela nous utiliserons trois solutions.
 
   - Une boucle dans le .bat avec FOR IN DO, la plus éfficiante, mais parfois trop.
 
-  - Une boucle dans un programme Autolisp, plus lente, mais plus sûre.
+  - Un programme Autolisp, plus lent, mais plus sûre.
 
-  ### [FOR IN DO](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for)
+  - Un programme Python.
 
-### Root
+### [FOR IN DO]
+
+Créer un dossier contenant un dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
+
+Toujours pour alléger l'écriture, nous allons placer le pointeur de la console sur le dossier avec la commande cd puis lancer notre script. 
+
+Donc dans le .bat
+```
+cd C:\Data\TMP\dwg
+
+for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i %%f /s cl0Zet.scr
+```
+
+Pour le détail d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
+
+Rien à changer dans le scr.
+
+Double cliquez sur le .bat, la console s'ouvre le temps que tout les dossiers soient traités.
+
+
+## Root
 
   https://www.houseofbim.com/posts/son-of-a-batch-autocad-core-console-through-lisp/
   
