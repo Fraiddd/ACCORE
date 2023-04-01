@@ -14,9 +14,11 @@ vous retourne le chemin d'accoreconsole.exe
 
 "C:\\Program Files\\Autodesk\\AutoCAD 2015\\accoreconsole.exe"
 
-Ici pour une 2015. (Copier/Coller ce chemin dans cmd.exe)
+Ici pour une 2015.
 
-Le simple fait de l'exécuter dans la console, affichera les commutateurs de ligne de commande qui peuvent être utilisés avec lui, un exemple de script et ouvre une session Autocad sur Dessin1.dwg.
+Copier/Coller ce chemin dans la console Windows (touche Windows + R, tapez "cmd") puis Entrée.
+
+Le simple fait de l'exécuter dans la console, affichera les commutateurs de ligne de commande qui peuvent être utilisés avec lui, un exemple d'utilisation et ouvre une session Autocad sur Dessin1.dwg.
 
 ![](img/Illu1.png) 
 
@@ -40,9 +42,9 @@ Pour raccourcir nos futurs scripts, nous pouvons rajouter au Path Windows le dos
 
 Redémarrer la console pour la prise en compte. Maintenant, accoreconsole.exe suffira.
 
-Je tiens à prévenir tout de suite, que travailler avec accore, c'est le faire sans filet. Aucun message d'erreur, pas de retours en arrière possible ...
+Je tiens à prévenir tout de suite, que travailler avec accore, c'est le faire sans filet. Aucun message d'erreur, pas de retours en arrière possible. Il est donc conseillé de faire des essais, et de sauvegarder son travail en prévention. Nous éviterons aussi de modifier des fichiers de façon récursive (dans les dossiers situé dans un dossier).
 
-Nous pouvons donc dessiner directement dans la console.
+Mais avant cela testons comment nous pouvons dessiner directement dans la console. Un rectangle de 100x100.
 
 ![](img/Illu2.png)
 
@@ -59,11 +61,12 @@ Plusieurs constats:
 Pour l'utilisation directe dans la console, je vais m'arretter la, car c'est en script que c'est le plus intérréssant.
 
 ## .bat et .scr 
+
 Le principe, le ".bat" démarre accoreconsole dans la console Windows, en lui donnant le chemin du fichier à éditer, puis éxécute le script inscrit dans le ".scr".
 Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
 Ce sont de simples fichiers texte (utf-8) que vous pouvez éditer avec Notepad ou votre éditeur de texte préféré.
 
-Plassons un dwg nommé Test.dwg (avec un objet et un calque courant) dans un dossier "C:\Data".
+Plaçons un dwg nommé Test.dwg (avec un objet et un calque Test courant) dans un dossier "C:\Data".
 
 Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr" dans lequel nous écrivons le script.
 
@@ -85,14 +88,16 @@ Puis le "Test.bat".
 
 Qui lance accoreconsole.exe, avec le dessin "C:\Data\Test.dwg" et applique le script "C:\Data\Test.scr".
 
-```accoreconsole.exe /i "C:\Data\Test.dwg" /s "C:\Data\Test.scr"```
+```accoreconsole.exe /i C:\Data\Test.dwg /s C:\Data\Test.scr```
 
-Si vous n'utilsez jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien Fichier de commande Windows (.bat). Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci
+Si vous n'utilsez jammais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien Fichier de commande Windows (.bat). Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci.
 ```
 assoc .bat=cmdfile
 ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
 ```
-
+On double clic sur Test.bat
+La console s'ouvre pendant une seconde et se referme.
+Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été éffectué.
 
 ### Root
 
