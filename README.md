@@ -121,7 +121,7 @@ Donc dans le .bat
 ```
 cd C:\Data\TMP\dwg
 
-for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i %%f /s cl0Zet.scr
+for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s cl0Zet.scr
 ```
 
 Pour le détail d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
