@@ -1,6 +1,6 @@
 # ACCORE
 
-Depuis le version 2013, AutoCAD dispose d'une version de ligne de commande d'AutoCAD qui peut vous aider à accélérer considérablement le traitement par lots des dessins.
+Depuis le version 2013, AutoCAD dispose d'une version de ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF.
 Non supporté officiellement par Autodesk, il n'y a pas de documentation, je vous propose donc une petite immersion. 
 
 ## Principes d'utilisation
@@ -10,11 +10,9 @@ Dans le dossier d'installation d'AutoCAD, vous pouvez trouver le "AccoreConsole.
 
 Copier/Coller (findfile "accoreconsole.exe") dans la barre de commande Autocad :
 
-vous retourne le chemin d'accoreconsole.exe
+vous retourne le chemin d'accoreconsole.exe, Ici pour une 2015.
 
 "C:\\Program Files\\Autodesk\\AutoCAD 2015\\accoreconsole.exe"
-
-Ici pour une 2015.
 
 Copier/Coller ce chemin dans la console Windows (touche Windows + R, tapez "cmd") puis Entrée.
 
@@ -90,7 +88,7 @@ Qui lance accoreconsole.exe, avec le dessin "C:\Data\Test.dwg" et applique le sc
 
 ```accoreconsole.exe /i C:\Data\Test.dwg /s C:\Data\Test.scr```
 
-Si vous n'utilsez jammais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien Fichier de commande Windows (.bat). Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci.
+Si vous n'utilsez jammais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien Fichier de commande Windows (.bat). Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci et fermez la console.
 ```
 assoc .bat=cmdfile
 ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
@@ -98,6 +96,15 @@ ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
 On double clic sur Test.bat
 La console s'ouvre pendant une seconde et se referme.
 Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été éffectué.
+
+Voyons maintenant comment modifier tout les dwg d'un dossier.
+Pour cela nous utiliserons deux solutions.
+
+  - Une boucle dans le .bat avec FOR IN DO, la plus éfficiante, mais parfois trop.
+
+  - Une boucle dans un programme Autolisp, plus lente, mais plus sûre.
+
+  ### [FOR IN DO](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for)
 
 ### Root
 
