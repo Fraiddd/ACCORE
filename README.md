@@ -16,17 +16,17 @@ vous retourne le chemin d'accoreconsole.exe, Ici pour une 2015.
 
 Copier/Coller ce chemin dans la console Windows (touche Windows + R, tapez "cmd") puis Entrée.
 
-Le simple fait de l'exécuter dans la console, affichera les commutateurs de ligne de commande qui peuvent être utilisés avec lui, un exemple d'utilisation et ouvre une session Autocad sur Dessin1.dwg.
+Le simple fait de l'exécuter dans la console, affichera les commutateurs de ligne de commande qui peuvent être utilisés, un exemple d'utilisation et ouvre une session Autocad sur Dessin1.dwg.
 
 ![](img/Illu1.png) 
 
-Il accepte six commutateurs de ligne de commande :
+"AccoreConsole.exe" accepte six commutateurs de ligne de commande :
 
-1) /i : permet de spécifier le chemin du fichier de dessin sur lequel exécuter le fichier de script
+1) /i : permet de spécifier le chemin du fichier de dessin sur lequel exécuter le fichier de script (.scr). (requis)
 
-2) /s : permet de spécifier le chemin d'accès au fichier de script.
+2) /s : permet de spécifier le chemin d'accès au fichier de script. (requis)
 
-3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système.(optionnel)
+3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système.(optionnel, langue utilisé par Autocad par defaut)
 
 4) /isolate : utilisé pour empêcher les modifications apportées aux variables système d'affecter AutoCAD normal.(optionnel)
 
@@ -38,11 +38,13 @@ Pour raccourcir nos futurs scripts, nous pouvons rajouter au Path Windows le dos
 
 ``` setx Path "%Path%;C:\Program Files\Autodesk\AutoCAD 2015" ```
 
-Redémarrer la console pour la prise en compte. Maintenant, accoreconsole.exe suffira.
+Redémarrer la console pour la prise en compte. Maintenant, accoreconsole.exe suffira pour l'appeler dans la console.
 
-Il est donc conseillé de faire des essais, et de sauvegarder son travail en prévention, même si un .bak est créer. Nous éviterons aussi de modifier des fichiers de façon récursive (dans les dossiers situé dans un dossier).
+Il est conseillé de faire des essais, et de sauvegarder son travail en prévention, même si un .bak est créer. Nous éviterons aussi de modifier des fichiers de façon récursive (dans les sous-dossiers).
 
-Mais avant cela testons comment nous pouvons dessiner directement dans la console. Un rectangle de 100x100.
+Mais avant cela testons comment nous pouvons dessiner directement dans la console. 
+
+Un rectangle de 100x100.
 
 ![](img/Illu2.png)
 
@@ -61,10 +63,12 @@ Pour l'utilisation directe dans la console, je vais m'arretter la, car c'est en 
 ## .bat et .scr 
 
 Le principe, le ".bat" démarre accoreconsole dans la console Windows, en lui donnant le chemin du fichier à éditer, puis éxécute le script inscrit dans le ".scr".
-Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
-Ce sont de simples fichiers texte (utf-8) que vous pouvez éditer avec Notepad ou votre éditeur de texte préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
 
-Plaçons un dwg nommé Test.dwg (avec un objet et un calque Test courant) dans un dossier "C:\Data".
+Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
+
+Ce sont de simples fichiers texte (utf-8 pour le .bat, ) que vous pouvez éditer avec Notepad ou votre éditeur de texte simple préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
+
+Plaçons un dwg nommé Test.dwg (avec un objet et un calque "Test" courant) dans un dossier "C:\Data".
 
 Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr" dans lequel nous écrivons le script.
 
@@ -81,6 +85,11 @@ et
 _qsave
 
 ```
+Plus d'infos sur l'écriture des ".scr" [l'aides des développeurs.](https://help.autodesk.com/view/OARX/2019/FRA/?guid=GUID-95BB6824-0700-4019-9672-E6B502659E9E) 
+
+Les raccourcis (acad.pgp) ne sont pas pris en compte.
+
+Vous pouvez utiliser de l'Autolisp, mais pas les API's externes.()
 
 Puis le "Test.bat".
 
@@ -117,11 +126,11 @@ Pour cela nous utiliserons trois solutions.
 
 Créer un dossier contenant un dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
 
-Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier avec la commande cd puis lancer notre script. 
+Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier "C:\Data\dwg" avec la commande cd puis lancer notre script. Biensur vous pouvez utiliser votre dossier, si il contient un espace, entouré votre chemin par des guillemets.
 
 Donc dans le .bat
 ```
-cd C:\Data\TMP\dwg
+cd C:\Data\dwg
 
 for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s cl0Zet.scr
 ```
@@ -134,7 +143,7 @@ Double cliquez sur le .bat, la console s'ouvre le temps que tout les dossiers so
 
 Si certain apprécie l'apparition de la console, ce n'est pas mon cas. On verras qu'en Autolisp nous pouvons la cachée.
 
-### Autolisp
+### Autolisp / Visual-Lisp
 
 
 
