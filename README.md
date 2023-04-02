@@ -126,13 +126,15 @@ cd C:\Data\TMP\dwg
 for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s cl0Zet.scr
 ```
 
-Pour les détails d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for). Si vraiment vous voulez allez aussi dans les sous-dossier (récursif) ('dir /s /b "*.dwg"').
+Pour les détails d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for). Si vraiment vous voulez allez aussi dans les sous-dossier il faut rajouter /s après dir.
 
 Rien à changer dans le scr.
 
 Double cliquez sur le .bat, la console s'ouvre le temps que tout les dossiers soient traités.
 
 Si certain apprécie l'apparition de la console, ce n'est pas mon cas. On verras qu'en Autolisp nous pouvons la cachée.
+
+### Autolisp
 
 
 
