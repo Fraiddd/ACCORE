@@ -1,6 +1,6 @@
 # ACCORE
 
-Depuis le version 2013, AutoCAD dispose d'une version de ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF.
+Depuis le version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF.
 Non supporté officiellement par Autodesk, il n'y a pas de documentation, je vous propose donc une petite immersion. 
 
 ## Principes d'utilisation
@@ -26,7 +26,7 @@ Le simple fait de l'exécuter dans la console, affichera les commutateurs de lig
 
 2) /s : permet de spécifier le chemin d'accès au fichier de script. (requis)
 
-3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système.(optionnel, langue utilisé par Autocad par defaut)
+3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système (optionnel, langue utilisé par Autocad par defaut).
 
 4) /isolate : utilisé pour empêcher les modifications apportées aux variables système d'affecter AutoCAD normal.(optionnel)
 
@@ -50,6 +50,8 @@ Un rectangle de 100x100.
 
 Plusieurs constats:
 
+  - Accepte les expressions lisp (setvar)
+
   - Double les messages de Commande. (plutôt désagréable)
 
   - Accepte les commandes françaises. (une surprise)
@@ -57,6 +59,7 @@ Plusieurs constats:
   - Cause en Français.
 
   - Ne demande pas d'enregistrer avant de quitter. 
+
 
 Pour l'utilisation directe dans la console, je vais m'arretter la, car c'est en script que c'est le plus intérréssant.
 
@@ -66,7 +69,7 @@ Le principe, le ".bat" démarre accoreconsole dans la console Windows, en lui do
 
 Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
 
-Ce sont de simples fichiers texte (utf-8 pour le .bat, ) que vous pouvez éditer avec Notepad ou votre éditeur de texte simple préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
+Ce sont de simples fichiers texte ASCII (utf-8 pour le .bat) que vous pouvez éditer avec Notepad ou votre éditeur de texte simple préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
 
 Plaçons un dwg nommé Test.dwg (avec un objet et un calque "Test" courant) dans un dossier "C:\Data".
 
@@ -126,7 +129,7 @@ Pour cela nous utiliserons trois solutions.
 
 Créer un dossier contenant un dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
 
-Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier "C:\Data\dwg" avec la commande cd puis lancer notre script. Biensur vous pouvez utiliser votre dossier, si il contient un espace, entouré votre chemin par des guillemets.
+Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier "C:\Data\dwg" avec la commande cd puis lancer notre script. Vous pouvez utiliser votre dossier, si il contient un espace, entouré votre chemin par des guillemets.
 
 Donc dans le .bat
 ```
@@ -145,10 +148,19 @@ Si certain apprécie l'apparition de la console, ce n'est pas mon cas. On verras
 
 ### Autolisp / Visual-Lisp
 
+Autolisp peut etre utlisé pour lancer le .bat.
 
+Si vous coller cela dans votre ligne de commande Autocad.
+```
+(command "_shell" "c:\\Data\\TMP\\dwg\\cl0Zet.bat")
+
+```
+Vous lancer le ".bat".
 
 
 ## Root
 
   https://www.houseofbim.com/posts/son-of-a-batch-autocad-core-console-through-lisp/
+
+  https://through-the-interface.typepad.com/through_the_interface/2012/02/the-autocad-2013-core-console.html
   
