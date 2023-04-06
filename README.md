@@ -1,16 +1,16 @@
 # ACCORE
 
-Depuis le version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF.
-Non supporté officiellement par Autodesk, il n'y a pas de documentation, je vous propose donc une petite immersion. 
+Depuis la version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF.
+Pas officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
 
-## Principes d'utilisation
-### Ligne de commande
+# Principes d'utilisation
+## Ligne de commande
 
-Dans le dossier d'installation d'AutoCAD, vous pouvez trouver le "AccoreConsole.exe". 
+Dans le dossier d'installation d'AutoCAD, vous pouvez trouver l'"AccoreConsole.exe". 
 
 Copier/Coller (findfile "accoreconsole.exe") dans la barre de commande Autocad :
 
-vous retourne le chemin d'accoreconsole.exe, Ici pour une 2015.
+vous retourne le chemin d'accoreconsole.exe, ici pour une 2015.
 
 "C:\\Program Files\\Autodesk\\AutoCAD 2015\\accoreconsole.exe"
 
@@ -52,7 +52,7 @@ Plusieurs constats:
 
   - Accepte les expressions lisp (setvar)
 
-  - Double les messages de Commande. (plutôt désagréable)
+  - Double les messages de commande. (plutôt désagréable)
 
   - Accepte les commandes françaises. (une surprise)
 
@@ -61,11 +61,11 @@ Plusieurs constats:
   - Ne demande pas d'enregistrer avant de quitter. 
 
 
-Pour l'utilisation directe dans la console, je vais m'arretter la, car c'est en script que c'est le plus intérréssant.
+Pour l'utilisation directe dans la console, je vais m'arrêter la, car c'est en script que c'est le plus intéressant.
 
 ## .bat et .scr 
 
-Le principe, le ".bat" démarre accoreconsole dans la console Windows, en lui donnant le chemin du fichier à éditer, puis éxécute le script inscrit dans le ".scr".
+Le principe, le ".bat" démarre accoreconsole.exe dans la console Windows, en lui donnant le chemin du fichier à éditer, puis exécute le script inscrit dans le ".scr".
 
 Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
 
