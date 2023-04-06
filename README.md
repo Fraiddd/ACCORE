@@ -129,7 +129,7 @@ Pour cela nous utiliserons trois solutions.
 
 Créer un dossier contenant une dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
 
-Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier ou se trouve le .bat avec la commande cd "%~dp0" puis lancer notre script. Vous pouvez utiliser votre dossier, s'il contient un espace, entouré votre chemin par des guillemets. %~n0 corespond au nom du .bat qui s'execute.
+Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier ou se trouve le .bat avec la commande 'cd %~dp0' puis lancer notre script. Vous pouvez utiliser votre dossier, s'il contient un espace, entouré votre chemin par des guillemets. %~n0 corespond au nom du .bat qui s'execute.
 
 Donc dans le .bat
 ```
