@@ -90,6 +90,8 @@ _qsave
 ```
 Plus d'infos sur l'écriture des ".scr" [l'aides des développeurs.](https://help.autodesk.com/view/OARX/2019/FRA/?guid=GUID-95BB6824-0700-4019-9672-E6B502659E9E) 
 
+Si vous éditer des DXF, il faut rajouter 1 espace sur 2 lignes après _qsave.
+
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
 
 Vous pouvez utiliser de l'Autolisp, mais pas les API's externes.()
@@ -138,7 +140,7 @@ cd %~dp0
 for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s %~n0.scr
 ```
 
-Pour les détails d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
+Pour les détails d'utilisation de la commande FOR et dir, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
 
 Si vraiment vous voulez allez aussi dans les sous-dossier il faut rajouter /s après dir.
 
@@ -221,7 +223,7 @@ with open(os.devnull,'w') as null:
 
 ```
 
-Nous allons pouvoir, tout comme nous pouvons le faire en lisp, "enrober" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
+Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
 
 
 
