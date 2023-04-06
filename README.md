@@ -58,7 +58,7 @@ Plusieurs constats:
 
   - Cause en Français.
 
-  - Ne demande pas d'enregistrer avant de quitter. 
+  - Ne demande pas d'enregistrer avant de quitter(il ne faut donc pas l'oublié). 
 
 
 Pour l'utilisation directe dans la console, je vais m'arrêter la, car c'est en script que c'est le plus intéressant.

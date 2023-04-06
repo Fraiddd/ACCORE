@@ -14,13 +14,12 @@
     :No copyright: (!) 2023 by Frédéric Coulon.
     :No license: Do with it what you want.
 '''
-import os, sys, win32com.client
 
+import subprocess
+import os
 
-# def run():
-#     # bat = ""
-#     shell = win32com.client.Dispatch("WScript.Shell")
-#     ret = shell.Run("cmd.exe " + "c:\Data\TMP\dwg\cl0Zet.bat", 1)
-#     return ret
-# run()
-os.startfile("c:\Data\TMP\dwg\cl0Zet.bat")
+with open("cl0Zet.bat", "w") as f:
+    f.write('cd %~dp0\nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') do accoreconsole.exe /i "%%f" /s %~n0.scr')
+with open(os.devnull,'w') as null:
+    process = subprocess.Popen("c:\Data\TMP\dwg\cl0Zet.bat")
+    process.communicate(input='x'.encode())[0]
