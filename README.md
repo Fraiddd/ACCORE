@@ -67,11 +67,11 @@ Pour l'utilisation directe dans la console, je vais m'arrêter la, car c'est en 
 
 Le principe, le ".bat" démarre accoreconsole.exe dans la console Windows, en lui donnant le chemin du fichier à éditer, puis exécute le script inscrit dans le ".scr".
 
-Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commandes qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
+Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers de commande qui permettent d'automatiser des tâches en exécutant une séquence de commandes dans un ordre précis.
 
 Ce sont de simples fichiers texte ASCII (utf-8 pour le .bat) que vous pouvez éditer avec Notepad ou votre éditeur de texte simple préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
 
-Plaçons un dwg nommé Test.dwg (avec un objet et un calque "Test" courant) dans un dossier "C:\Data" que l'on rajouteras aux dossiers approuvé par Autocad.
+Plaçons un dwg nommé "Test.dwg" (avec un objet et un calque "Test" courant) dans un dossier "C:\Data" que l'on rajoutera aux dossiers approuvés par Autocad.
 
 Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr" dans lequel nous écrivons le script.
 
@@ -102,7 +102,7 @@ Qui lance accoreconsole.exe, avec le dessin "C:\Data\Test.dwg" et applique le sc
 
 Si les chemins contiennent des espaces, il faut les entourer par des guillemets.
 
-Si vous n'utilsez jammais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le Type de fichiers soit bien "Fichier de commande Windows (.bat)". Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci et fermez la console.
+Si vous n'utilsez jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le type de fichiers soit bien "Fichier de commande Windows (.bat)". Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci et fermez la console.
 ```
 assoc .bat=cmdfile
 ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
@@ -111,9 +111,9 @@ On double clic sur Test.bat
 
 La console s'ouvre pendant une seconde et se referme.
 
-Un fichier .bak est apparru.
+Un fichier .bak est apparu.
 
-Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été éffectué.
+Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été effectué.
 
 Voyons maintenant comment modifier tout les dwg d'un dossier.
 
@@ -127,9 +127,9 @@ Pour cela nous utiliserons trois solutions.
 
 ### [FOR IN DO]
 
-Créer un dossier contenant un dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
+Créer un dossier contenant une dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
 
-Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier "C:\Data\dwg" avec la commande cd puis lancer notre script. Vous pouvez utiliser votre dossier, si il contient un espace, entouré votre chemin par des guillemets.
+Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier "C:\Data\dwg" avec la commande cd puis lancer notre script. Vous pouvez utiliser votre dossier, s'il contient un espace, entouré votre chemin par des guillemets.
 
 Donc dans le .bat
 ```
