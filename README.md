@@ -142,22 +142,22 @@ Pour les détails d'utilisation de la commande FOR, voici un [lien](https://lear
 
 Rien à changer dans le scr.
 
-Double cliquez sur le .bat, la console s'ouvre le temps que tout les dossiers soient traités.
+Double-cliquez sur le .bat, la console s'ouvre le temps que tous les dossiers soient traités.
 
-Si certain apprécie l'apparition de la console, ce n'est pas mon cas. On verras qu'en Autolisp nous pouvons la cachée.
+Si certain apprécient l'apparition de la console, ce n'est pas mon cas. On verra qu'en Autolisp nous pouvons la cacher.
 
 ## Autolisp / Visual-Lisp
 
-Autolisp peut etre utlisé pour lancer le .bat.
+Autolisp peut-être utilisé pour lancer le .bat.
 
-Si vous coller cela dans votre ligne de commande Autocad.
+Si vous collez cela dans votre ligne de commande Autocad.
 ```
 (command "_shell" "c:\\Data\\TMP\\dwg\\cl0Zet.bat")
 
 ```
 Vous lancer le ".bat".
 
-Pour avoir plus de contrôle sur l'ouverture de la console nous pouvons utiliser cette fonction.
+Pour avoir plus de contrôles sur l'ouverture de la console nous pouvons utiliser cette fonction.
 
 ```
 (defun run (file / objWS ret)
@@ -189,7 +189,7 @@ Pour avoir plus de contrôle sur l'ouverture de la console nous pouvons utiliser
 ```
 On l'utilise de cette manière (run "c:\\Data\\TMP\\dwg\\cl0Zet.bat")
 
-La console n'apparait pas, mais fait le travail tout de même.
+La console n'apparaît pas, mais fait le travail tout de même.
 
 ## Python
 
