@@ -157,6 +157,38 @@ Si vous coller cela dans votre ligne de commande Autocad.
 ```
 Vous lancer le ".bat".
 
+Pour avoir plus de contrôle sur l'ouverture de la console nous pouvons utiliser cette fonction.
+
+```
+(defun run (file / objWS ret)
+    (setq ret T)
+    ; Check the existence of the file. 
+    (if (findfile file) 
+        ; Check the raising of an exception.
+        (if (vl-catch-all-error-p 
+                (vl-catch-all-apply 'vlax-invoke-method 
+                    (list
+                        ; Creation of the object "WScript.Shell".
+                        (setq objWS (vlax-get-or-create-object "WScript.Shell"))
+                         "Run"           ; String, command line to execute.
+                          file           ; String, file .bat
+                          0              ; Int, 0 to 10, 0 -> Hides the window and activates another window.
+                          :vlax-true     ; Boolean, Waits for the end before carrying out the continuation.
+                    )
+                )
+            )   
+            (setq ret "Invalid file")
+            ; Release the object "WScript.Shell".
+            (vlax-release-object objWS)
+        )
+      (setq ret "File not found")
+    )
+    ret
+)
+
+```
+On l'utilse de cette manière (run "c:\\Data\\TMP\\dwg\\cl0Zet.bat")
+
 
 ## Root
 
