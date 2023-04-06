@@ -129,11 +129,11 @@ Pour cela nous utiliserons trois solutions.
 
 Créer un dossier contenant une dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
 
-Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier "C:\Data\dwg" avec la commande cd puis lancer notre script. Vous pouvez utiliser votre dossier, s'il contient un espace, entouré votre chemin par des guillemets.
+Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier ou se trouve le .bat avec la commande cd "%~dp0" puis lancer notre script. Vous pouvez utiliser votre dossier, s'il contient un espace, entouré votre chemin par des guillemets.
 
 Donc dans le .bat
 ```
-cd C:\Data\dwg
+cd "%~dp0"
 
 for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s cl0Zet.scr
 ```
@@ -148,7 +148,7 @@ Si certain apprécient l'apparition de la console, ce n'est pas mon cas. On verr
 
 ## Autolisp / Visual-Lisp
 
-Autolisp peut-être utilisé pour lancer le .bat.
+Autolisp peut-être utilisé pour lancer le .bat, bien sur Autocad doit être démarré.
 
 Si vous collez cela dans votre ligne de commande Autocad.
 ```
@@ -193,6 +193,20 @@ La console n'apparaît pas, mais fait le travail tout de même.
 
 ## Python
 
+Ici, pas besoin qu'Autocad soit démarrer, juste installé ainsi que Python.
+
+Pourquoi utiliser Python?
+
+Je reponderais pourquoi pas?
+
+Le lanceur de base:
+
+```
+import os
+os.startfile("c:\Data\TMP\dwg\cl0Zet.bat")
+```
+
+Nous allons pouvoir, tout comme nous pouvons le faire en lisp, "enrobé" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
 
 
 
