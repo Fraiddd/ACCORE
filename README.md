@@ -189,6 +189,12 @@ Pour avoir plus de contrôle sur l'ouverture de la console nous pouvons utiliser
 ```
 On l'utilse de cette manière (run "c:\\Data\\TMP\\dwg\\cl0Zet.bat")
 
+La console n'apparait pas, mais fait le travail tout de même.
+
+### Python
+
+
+
 
 ## Root
 
