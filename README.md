@@ -138,7 +138,9 @@ cd "%~dp0"
 for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s cl0Zet.scr
 ```
 
-Pour les détails d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for). Si vraiment vous voulez allez aussi dans les sous-dossier il faut rajouter /s après dir.
+Pour les détails d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
+
+Si vraiment vous voulez allez aussi dans les sous-dossier il faut rajouter /s après dir.
 
 Rien à changer dans le scr.
 
@@ -203,10 +205,23 @@ Le lanceur de base:
 
 ```
 import os
+
 os.startfile("c:\Data\TMP\dwg\cl0Zet.bat")
+
+```
+Le lanceur sans la console (mais le déroulement des commandes apparais dans le terminal Python)
+
+```
+import subprocess
+import os
+
+with open(os.devnull,'w') as null:
+    process = subprocess.Popen("c:\Data\TMP\dwg\cl0Zet.bat")
+    process.communicate(input='x'.encode())[0]
+
 ```
 
-Nous allons pouvoir, tout comme nous pouvons le faire en lisp, "enrobé" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
+Nous allons pouvoir, tout comme nous pouvons le faire en lisp, "enrober" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
 
 
 
