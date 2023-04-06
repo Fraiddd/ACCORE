@@ -129,13 +129,13 @@ Pour cela nous utiliserons trois solutions.
 
 Créer un dossier contenant une dizaine de dwg. Y placer vos .bat et .scr qu'on renomme cl0Zet.bat cl0Zet.scr.
 
-Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier ou se trouve le .bat avec la commande cd "%~dp0" puis lancer notre script. Vous pouvez utiliser votre dossier, s'il contient un espace, entouré votre chemin par des guillemets.
+Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier ou se trouve le .bat avec la commande cd "%~dp0" puis lancer notre script. Vous pouvez utiliser votre dossier, s'il contient un espace, entouré votre chemin par des guillemets. %~n0 corespond au nom du .bat qui s'execute.
 
 Donc dans le .bat
 ```
-cd "%~dp0"
+cd %~dp0
 
-for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s cl0Zet.scr
+for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s %~n0.scr
 ```
 
 Pour les détails d'utilisation de la commande FOR, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
