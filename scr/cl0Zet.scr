@@ -1,0 +1,4 @@
+(setvar 'clayer "0")
+zoom
+et
+_qsave
