@@ -58,7 +58,7 @@ Plusieurs constats:
 
   - Cause en Français.
 
-  - Ne demande pas d'enregistrer avant de quitter(il ne faut donc pas l'oublié). 
+  - Ne demande pas d'enregistrer avant de quitter(il ne faut donc pas oublier de sauver). 
 
 
 Pour l'utilisation directe dans la console, je vais m'arrêter la, car c'est en script que c'est le plus intéressant.
@@ -71,7 +71,7 @@ Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers
 
 Ce sont de simples fichiers texte ASCII (utf-8 pour le .bat) que vous pouvez éditer avec Notepad ou votre éditeur de texte simple préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
 
-Plaçons un dwg nommé "Test.dwg" (avec un objet et un calque "Test" courant) dans un dossier "C:\Data" que l'on rajoutera aux dossiers approuvés par Autocad.
+Plaçons un dwg nommé "Test.dwg" (avec un objet et un calque "Test" courant) dans un dossier "C:\Data" que l'on rajoutera aux dossiers approuvés par Autocad (important!).
 
 Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr" dans lequel nous écrivons le script.
 

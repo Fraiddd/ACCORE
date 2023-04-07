@@ -18,8 +18,11 @@
 import subprocess
 import os
 
-with open("cl0Zet.bat", "w") as f:
-    f.write('cd %~dp0\nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') do accoreconsole.exe /i "%%f" /s %~n0.scr')
-with open(os.devnull,'w') as null:
-    process = subprocess.Popen("c:\Data\TMP\dwg\cl0Zet.bat")
-    process.communicate(input='x'.encode())[0]
+def run(name, dir):
+    with open(dir + name + ".bat", "w") as f:
+        f.write('cd %~dp0\nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') do accoreconsole.exe /i "%%f" /s %~n0.scr')
+    with open(os.devnull,'w') as null:
+        process = subprocess.Popen(dir + name + ".bat")
+        process.communicate(input='x'.encode())[0]
+
+run('cl0Zet', 'c:\Data\TMP\dwg\\')
