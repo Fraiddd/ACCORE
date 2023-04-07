@@ -91,6 +91,8 @@ _qsave
 ```
 Plus d'infos sur l'écriture des ".scr" [l'aides des développeurs.](https://help.autodesk.com/view/OARX/2019/FRA/?guid=GUID-95BB6824-0700-4019-9672-E6B502659E9E) 
 
+Et quelques exemples [ici](scr/)
+
 Si vous éditer des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave.
 
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
@@ -227,6 +229,23 @@ with open(os.devnull,'w') as null:
 ```
 
 Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
+
+
+# Usages Avancés
+
+  L'inscrition de chemin d'accoreconsole dans le PATH Windows est nécéssaire pour éviter d'éditer les fichiers, si on change d'autocad ou de poste.
+  Voici un ".bat" qui s'en charge pour vous.
+  ```
+  REM Inscrit le chemin de accoreconsole dans le path Windows.
+  setlocal EnableDelayedExpansion
+  for /f "delims=" %%a in ('where acad.exe') do set "ACAD_PATH=%%~dpa"
+  set "ACAD_PATH=!ACAD_PATH:~0,-1!"
+  setx Path "%Path%;%ACAD_PATH%"
+  endlocal
+  ```
+## .bat .scr
+
+
 
 
 
