@@ -1,6 +1,7 @@
 # ACCORE
 
-Depuis la version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF.
+Depuis la version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF en complément d'[ObjectDBX](https://github.com/Fraiddd/ODBX_LIB).
+
 Pas officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
 
 # Principes d'utilisation
@@ -71,7 +72,7 @@ Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers
 
 Ce sont de simples fichiers texte ASCII (utf-8 pour le .bat) que vous pouvez éditer avec Notepad ou votre éditeur de texte simple préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
 
-Plaçons un dwg nommé "Test.dwg" (avec un objet et un calque "Test" courant) dans un dossier "C:\Data" que l'on rajoutera aux dossiers approuvés par Autocad (important!).
+Plaçons un dwg nommé "Test.dwg", avec un objet et un calque "Test" courant, dans un dossier "C:\Data" que l'on rajoutera aux dossiers approuvés par Autocad (important! sinon il n'y auras pas de sauvegarde).
 
 Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr" dans lequel nous écrivons le script.
 
@@ -90,7 +91,7 @@ _qsave
 ```
 Plus d'infos sur l'écriture des ".scr" [l'aides des développeurs.](https://help.autodesk.com/view/OARX/2019/FRA/?guid=GUID-95BB6824-0700-4019-9672-E6B502659E9E) 
 
-Si vous éditer des DXF, il faut rajouter 1 espace sur 2 lignes après _qsave.
+Si vous éditer des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave.
 
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
 
@@ -137,9 +138,9 @@ Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la conso
 
 Donc dans le .bat
 ```
-cd %~dp0
+cd "%~dp0"
 
-for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s %~n0.scr
+for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s "%~n0.scr"
 ```
 
 Pour les détails d'utilisation de la commande FOR et dir, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
