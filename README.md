@@ -116,7 +116,7 @@ On double clic sur Test.bat
 
 La console s'ouvre pendant une seconde et se referme.
 
-Un fichier .bak est apparu.
+Un fichier .bak est apparu. Si cela procure une sécurité, attention, cela double aussi la place que prend votre dossier si il ne contenais pas de .bak.
 
 Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été effectué.
 
@@ -136,7 +136,7 @@ Créer un dossier contenant une dizaine de dwg. Y placer vos .bat et .scr qu'on 
 
 Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier ou se trouve le .bat avec la commande 'cd %~dp0' puis lancer notre script.
 
-%~n0 corespond au nom du .bat qui s'execute.
+%~n0 correspond au nom du .bat qui s'execute.
 
 Donc dans le .bat
 ```
@@ -160,6 +160,7 @@ Si certain apprécient l'apparition de la console, ce n'est pas mon cas. On verr
 Autolisp peut-être utilisé pour lancer le .bat, bien sur Autocad doit être démarré.
 
 Si vous collez cela dans votre ligne de commande Autocad.
+
 ```
 (command "_shell" "c:\\Data\\TMP\\dwg\\cl0Zet.bat")
 
@@ -202,7 +203,7 @@ La console n'apparaît pas, mais fait le travail tout de même.
 
 ## Python
 
-Ici, pas besoin qu'Autocad soit démarrer, juste installé ainsi que Python.
+Ici, pas besoin qu'Autocad soit démarré, juste installé ainsi que Python.
 
 Pourquoi utiliser Python?
 
@@ -233,7 +234,7 @@ Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" not
 
 # Usages Avancés
 
-  L'inscrition de chemin d'accoreconsole dans le PATH Windows est nécéssaire pour éviter d'éditer les fichiers, si on change d'autocad ou de poste.
+  L'inscrition de chemin d'accoreconsole dans le PATH Windows est nécéssaire pour éviter d'éditer les fichiers ".bat", si on change d'Autocad ou de poste par exemple.
   Voici un ".bat" qui s'en charge pour vous.
   ```
   REM Inscrit le chemin de accoreconsole dans le path Windows.
@@ -243,7 +244,9 @@ Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" not
   setx Path "%Path%;%ACAD_PATH%"
   endlocal
   ```
-## .bat .scr
+## .scr
+
+  Les commandes Autocad utilisables dans les scripts envoyés dans accoreconsole sont disponibles sur ce [site](https://through-the-interface.typepad.com/through_the_interface/2012/03/commands-that-work-in-the-autocad-2013-core-console.html).
 
 
 
