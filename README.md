@@ -35,7 +35,7 @@ Le simple fait de l'exécuter dans la console, affichera les commutateurs de lig
 
 6) /p[rofile] permet de spécifier le nom d'un profil AutoCAD à utiliser lors de l'ouverture du fichier DWG. (optionnel, apparu avec la version 2015)
 
-Pour raccourcir nos futurs scripts, nous pouvons rajouter au Path Windows le dossier comme ceci.
+Pour raccourcir nos futurs scripts, en démarrant cmd.exe en tant qu'administrateur nous pouvons rajouter le dossier au Path Windows comme ceci.
 
 ``` setx Path "%Path%;C:\Program Files\Autodesk\AutoCAD 2015" ```
 
@@ -107,7 +107,7 @@ Qui lance accoreconsole.exe, avec le dessin "C:\Data\Test.dwg" et applique le sc
 
 Si les chemins contiennent des espaces, il faut les entourer par des guillemets.
 
-Si vous n'utilsez jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le type de fichiers soit bien "Fichier de commande Windows (.bat)". Si ce n'est pas le cas, ouvrez cmd.exe et saisissez ceci et fermez la console.
+Si vous n'utilsez jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le type de fichiers soit bien "Fichier de commande Windows (.bat)". Si ce n'est pas le cas, ouvrez cmd.exe an tant qu'administrateur et saisissez ceci et fermez la console.
 ```
 assoc .bat=cmdfile
 ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
@@ -232,7 +232,7 @@ with open(os.devnull,'w') as null:
 Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
 
 
-# Usages Avancés
+# Pour allez plus loin
 
   L'inscrition de chemin d'accoreconsole dans le PATH Windows est nécéssaire pour éviter d'éditer les fichiers ".bat", si on change d'Autocad ou de poste par exemple.
   Voici un ".bat" qui s'en charge pour vous.
