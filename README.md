@@ -234,8 +234,9 @@ Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" not
 
 # Pour allez plus loin
 
-  L'inscrition de chemin d'accoreconsole dans le PATH Windows est nécéssaire pour éviter d'éditer les fichiers ".bat", si on change d'Autocad ou de poste par exemple.
-  Voici un ".bat" qui s'en charge pour vous.
+  L'inscrition de chemin d'accoreconsole dans le PATH Windows est nécéssaire.
+  
+  Pour éviter d'éditer les fichiers ".bat", si on change d'Autocad ou de poste par exemple, voici un ".bat" qui s'en charge.
   ```
   REM Inscrit le chemin de accoreconsole dans le path Windows.
   setlocal EnableDelayedExpansion
@@ -249,7 +250,7 @@ Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" not
   Les commandes Autocad utilisables dans les scripts envoyés dans accoreconsole sont disponibles sur ce [site](https://through-the-interface.typepad.com/through_the_interface/2012/03/commands-that-work-in-the-autocad-2013-core-console.html).
 
 
-
+(Edition en cours...)
 
 
 ## Root
