@@ -1,3 +1,4 @@
+;Rend le calque "0" courant, Détache toutes les xrefs, et sauve
 (setvar 'clayer "0")
 -xref
 t

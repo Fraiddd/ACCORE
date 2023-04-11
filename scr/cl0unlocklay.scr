@@ -1,3 +1,4 @@
+;Rend le calque "0" courant, dévérouille tous les calques, et sauve
 (setvar 'clayer "0")
 _-layer
 d

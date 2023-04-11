@@ -1,3 +1,4 @@
+;Rend le calque "0" courant, purge, et sauve
 (setvar 'clayer "0")
 -purger
 to

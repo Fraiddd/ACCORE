@@ -1,4 +1,4 @@
-(setvar 'clayer "0")
+;Rend le calque "0" courant, Détache toutes les images, et sauve
 -image
 d
 *

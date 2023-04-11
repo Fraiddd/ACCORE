@@ -1,3 +1,4 @@
+;Rend le calque "0" courant, zoom étendu, et sauve
 (setvar 'clayer "0")
 zoom
 et
