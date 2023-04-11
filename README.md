@@ -2,6 +2,8 @@
 
 Depuis la version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF en complément d'[ObjectDBX](https://github.com/Fraiddd/ODBX_LIB).
 
+Accoreconsole est un outil destiné à modifier des centaines de fichiers. Si vous avez moins de cent fichiers, préférer des lanceurs de script comme [scriptpro](https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/7xKPXzhEGzvnF4qzy2Ddi9.html), ou [SuperAutoScript](https://www.caderix.com/telechargement_autocad.html).
+
 Pas officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
 
 # Principes d'utilisation
