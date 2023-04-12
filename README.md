@@ -6,6 +6,25 @@ Accoreconsole est un outil destiné à modifier des centaines de fichiers. Si vo
 
 Pas officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
 
+# Quick start
+
+Pas le temps de tout lire...
+
+Un .bat lance "accoreconsole.exe" et applique un script .scr à une liste de fichiers.
+
+Le .bat:
+
+```
+@echo off
+rem ACCOR.bat : Utilise accoreconsole.exe pour appliquer un scrpt à un dossier.
+rem Coller ce fichier à coté du .scr dans le dossier cible.
+rem Renommer ce fichier selon le .scr
+cd "%~dp0"
+for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s "%~n0.scr"
+
+```
+
+
 # Principes d'utilisation
 ## Ligne de commande
 
@@ -280,4 +299,6 @@ Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" not
   https://www.houseofbim.com/posts/son-of-a-batch-autocad-core-console-through-lisp/
 
   https://through-the-interface.typepad.com/through_the_interface/2012/02/the-autocad-2013-core-console.html
+
+  https://www.cadtutor.net/forum/topic/44080-up-and-running-with-the-2013-core-console/
   
