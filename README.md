@@ -1,31 +1,53 @@
 # ACCORE
 
-Depuis la version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF en complément d'[ObjectDBX](https://github.com/Fraiddd/ODBX_LIB).
+## Pré-requis
 
-Accoreconsole est un outil destiné à modifier des centaines de fichiers. Si vous avez moins de cent fichiers, préférer des lanceurs de script comme [scriptpro](https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/7xKPXzhEGzvnF4qzy2Ddi9.html), ou [SuperAutoScript](https://www.caderix.com/telechargement_autocad.html).
+  - Autocad (Version 2013 et +).
 
-Pas officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
+  - Une bonne connaissance de ce derniers.
 
-# Quick start
+  - Savoir utiliser les lignes de commandes.
 
-Pas le temps de tout lire...
+  - Des connaissances en Autolisp / Visual-Lisp.
 
-Un .bat lance "accoreconsole.exe" et applique un script .scr à une liste de fichiers.
+  - Des bonnes notions des scripts Autocad.
 
-Le .bat:
+## Avertissements
 
-```
-@echo off
-rem ACCOR.bat : Utilise accoreconsole.exe pour appliquer un scrpt à un dossier.
-rem Coller ce fichier à coté du .scr dans le dossier cible.
-rem Renommer ce fichier selon le .scr
-cd "%~dp0"
-for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s "%~n0.scr"
+  Attention !!! Ceci est destiné aux Responsables de bureau d'études, cad manager, gestionnaires de big datas...
+  Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner de dommages irréparrables.
 
-```
+  Vous devez être admisnistrateur de votre poste, et travailler dans des dossiers appouvés par Autocad.
 
+## Présentation
+
+  Depuis la version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF en complément d'[ObjectDBX](https://github.com/Fraiddd/ODBX_LIB).
+
+  Accoreconsole est un outil destiné à modifier des centaines de fichiers. Si vous avez moins de cent fichiers, préférer des lanceurs de script comme [scriptpro](https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/7xKPXzhEGzvnF4qzy2Ddi9.html), ou [SuperAutoScript](https://www.caderix.com/telechargement_autocad.html).
+
+  Pas officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
+
+## Quick start
+
+  Pas le temps de tout lire...
+
+  Un .bat lance "accoreconsole.exe" et applique un script .scr à une liste de fichiers.
+
+  Le .bat:
+
+  ```
+  @echo off
+  rem ACCOR.bat : Utilise accoreconsole.exe pour appliquer un scrpt à un dossier.
+  rem Coller ce fichier à coté du .scr dans le dossier cible.
+  rem Renommer ce fichier selon le .scr
+  cd "%~dp0"
+  for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s "%~n0.scr"
+
+  ```
+  Double-cliquez sur le .bat.
 
 # Principes d'utilisation
+
 ## Ligne de commande
 
 Dans le dossier d'installation d'AutoCAD, vous pouvez trouver l'"AccoreConsole.exe". 
