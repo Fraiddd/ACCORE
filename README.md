@@ -159,7 +159,25 @@ Si certain apprécient l'apparition de la console, ce n'est pas mon cas. On verr
 
 ## Autolisp / Visual-Lisp
 
-Autolisp peut-être utilisé pour lancer le .bat, bien sur Autocad doit être démarré.
+Pour lancer accoreconsole.exe directement en Autolisp (sans .bat)
+
+```
+(command "start" "accoreconsole.exe /i c:\\Data\\TMP\\dwg\\Test.dwg /s c:\\Data\\TMP\\dwg\\cl0Zet.scr")
+
+```
+Non recommandé !!! Dans une boucle foreach
+
+```
+(setq path "c:\\Data\\TMP\\dwg\\")
+(foreach file (vl-directory-files path "*.dwg")
+  (command "start" (strcat "accoreconsole.exe /i "path file" /s " path "cl0Zet.scr"))
+)
+```
+Ici l'accoreconsole s'ouvre autant de fois qu'il y a de fichiers à traiter.
+
+De plus, le lisp s'arrette alors que plein de consoles restent ouvertes tant que le script n'est pas terminé. Une horreur ....
+
+Autolisp peut-être utilisé pour lancer le .bat, ce qui est une méthode plus propre.
 
 Si vous collez cela dans votre ligne de commande Autocad.
 
@@ -219,7 +237,7 @@ import os
 os.startfile("c:\Data\TMP\dwg\cl0Zet.bat")
 
 ```
-Le lanceur sans la console (mais le déroulement des commandes apparais dans le terminal Python)
+Le lanceur sans la console (mais le déroulement des commandes apparais dans le terminal Python):
 
 ```
 import subprocess
@@ -230,6 +248,8 @@ with open(os.devnull,'w') as null:
     process.communicate(input='x'.encode())[0]
 
 ```
+Des détails sur l'utilisation des [subprocess](https://peps.python.org/pep-0324/).
+
 
 Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
 
