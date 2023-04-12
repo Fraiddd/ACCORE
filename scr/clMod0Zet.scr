@@ -1,0 +1,6 @@
+;Rend le calque "0" courant, passe en espace objet, zoom étendu, et sauve
+(setvar 'clayer "0")
+(setvar 'ctab "model")
+zoom
+et
+_qsave
