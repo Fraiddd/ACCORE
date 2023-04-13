@@ -14,8 +14,8 @@
 
 ## Avertissements
 
-  Attention !!! Ceci est destiné aux Responsables de Bureau d'Etudes, Cad Manager, gestionnaires de Big Datas...
-  Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner des dommages irréparrables.
+  *** Attention !!! Ceci est destiné aux Responsables de Bureau d'Etudes, Cad Manager, gestionnaires de Big Datas...
+  Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner des dommages irréparrables. ***
 
 ## Installation
 
