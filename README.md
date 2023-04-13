@@ -156,11 +156,11 @@ Plus d'infos sur l'écriture des ".scr" [l'aides des développeurs.](https://hel
 
 Et quelques exemples [ici](scr/)
 
-Si vous éditer des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave.
+Si vous éditer des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave et il seras enregistrer en .dwg.
 
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
 
-Vous pouvez utiliser de l'Autolisp, mais pas les API's externes.()
+Vous pouvez utiliser de l'Autolisp, mais pas les API's externes. Voir [ici](#scr-1)
 
 ### .bat
 
