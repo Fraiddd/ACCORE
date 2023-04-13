@@ -21,17 +21,18 @@
 
   Accoreconsole.exe ne demande pas d'installation, cela est fait en même temps qu'Autocad.
 
-  Mais une préparation est nécéssaire, pour cela Vous devez être admisnistrateur de votre poste:
-      - Ajouter l'emplacement d'Accoreconsole.exe dans le PATH Windows. 
-        Voir [ici](#_) et [la](#préparation)
+  Mais une préparation est nécéssaire, pour cela Vous devez être admisnistrateur de votre poste: 
 
-      - Modifier les variables systèmes du profil utilisé par Accoreconsole.exe.
+  - Ajouter l'emplacement d'Accoreconsole.exe dans le PATH Windows. 
+    Voir [ici](#_) et [la](#préparation)
 
-          - SECURELOAD à 0
+  - Modifier les variables systèmes du profil utilisé par Accoreconsole.exe.
 
-          - Ajouter l'emplacement du dossier contenant les dwg dans TRUSTEDPATHS
+      - SECURELOAD à 0
 
-      - Si vous insérer de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, le désactiver pendant le traitement.
+      - Ajouter l'emplacement du dossier contenant les dwg dans TRUSTEDPATHS
+
+  - Si vous insérer de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, le désactiver pendant le traitement.
 
 ## Présentation
 
