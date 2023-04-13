@@ -135,6 +135,8 @@ Ce sont de simples fichiers texte ASCII (utf-8 pour le .bat) que vous pouvez éd
 
 Plaçons un dwg nommé "Test.dwg", avec un objet et un calque "Test" courant, dans un dossier "C:\Data" que l'on rajoutera aux dossiers approuvés par Autocad (important! sinon il n'y auras pas de sauvegarde).
 
+### .scr
+
 Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr" dans lequel nous écrivons le script.
 
   - Rendre le calque "0" courant.
@@ -159,6 +161,8 @@ Si vous éditer des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave.
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
 
 Vous pouvez utiliser de l'Autolisp, mais pas les API's externes.()
+
+### .bat
 
 Puis le "Test.bat".
 
