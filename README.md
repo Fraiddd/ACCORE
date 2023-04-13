@@ -22,8 +22,8 @@
   Accoreconsole.exe ne demande pas d'installation, cela est fait en même temps qu'Autocad.
 
   Mais une préparation est nécéssaire, pour cela Vous devez être admisnistrateur de votre poste:
-
-      - Ajouter l'emplacement d'Accoreconsole.exe dans le PATH Windows. Voir [ici](#_) et [la](#préparation)
+      - Ajouter l'emplacement d'Accoreconsole.exe dans le PATH Windows. 
+        Voir [ici](#_) et [la](#préparation)
 
       - Modifier les variables systèmes du profil utilisé par Accoreconsole.exe.
 
