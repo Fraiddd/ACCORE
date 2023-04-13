@@ -31,6 +31,8 @@
 
           - Ajouter l'emplacement du dossier contenant les dwg dans TRUSTEDPATHS
 
+      - Si vous insérer de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, le désactiver pendant le traitement.
+
 ## Présentation
 
   Depuis la version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF en complément d'[ObjectDBX](https://github.com/Fraiddd/ODBX_LIB).
@@ -59,6 +61,8 @@
   Double-cliquez sur le .bat.
 
 # Principes d'utilisation
+
+Vous adapterez ce qui suit à votre environnement et vos besoins.
 
 ## Ligne de commande
 
@@ -114,7 +118,7 @@ Plusieurs constats:
 
   - Cause en Français.
 
-  - Ne demande pas d'enregistrer avant de quitter(il ne faut donc pas oublier de sauver). 
+  - Ne demande pas d'enregistrer avant de quitter (il ne faut donc pas oublier de sauver). 
 
 
 Pour l'utilisation directe dans la console, je vais m'arrêter la, car c'est en script que c'est le plus intéressant.
@@ -282,7 +286,9 @@ Ici, pas besoin qu'Autocad soit démarré, juste installé ainsi que Python.
 
 Pourquoi utiliser Python?
 
-Je reponderais pourquoi pas? C'est pour donner un exemple d'utilisation avec un langage 
+Je reponderais pourquoi pas? C'est pour donner un exemple d'utilisation avec un autre langage.
+
+Vous pouvez aussi utiliser le VBA ou .NET, mais ce n'est pas aussi simple qu'en Python de lancer un SubProcess.
 
 Le lanceur de base:
 
