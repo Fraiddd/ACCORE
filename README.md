@@ -160,7 +160,7 @@ Si vous éditer des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave e
 
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
 
-Vous pouvez utiliser de l'Autolisp, mais pas les API's externes. Voir [ici](#scr-1)
+Vous pouvez utiliser de l'Autolisp, mais pas les API's externes.
 
 ### .bat
 
