@@ -17,7 +17,19 @@
   Attention !!! Ceci est destiné aux Responsables de bureau d'études, cad manager, gestionnaires de big datas...
   Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner de dommages irréparrables.
 
-  Vous devez être admisnistrateur de votre poste, et travailler dans des dossiers appouvés par Autocad.
+## Installation
+
+  Accoreconsole.exe ne demande pas d'installation, cela est fait en même temps qu'Autocad.
+
+  Mais une préparation est nécéssaire, pour cela Vous devez être admisnistrateur de votre poste:
+
+      - Ajouter l'emplacement d'Accoreconsole.exe dans le PATH Windows.
+
+      - Modifier les variables systèmes du profil utilisé par Accoreconsole.exe.
+
+          - SECURELOAD à 0
+
+          - Ajouter l'emplacement du dossier contenant les dwg dans TRUSTEDPATHS
 
 ## Présentation
 
@@ -25,7 +37,7 @@
 
   Accoreconsole est un outil destiné à modifier des centaines de fichiers. Si vous avez moins de cent fichiers, préférer des lanceurs de script comme [scriptpro](https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/7xKPXzhEGzvnF4qzy2Ddi9.html), ou [SuperAutoScript](https://www.caderix.com/telechargement_autocad.html).
 
-  Pas officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
+  Non officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
 
 ## Quick start
 
@@ -37,7 +49,7 @@
 
   ```
   @echo off
-  rem ACCOR.bat : Utilise accoreconsole.exe pour appliquer un scrpt à un dossier.
+  rem ACCOR.bat : Utilise accoreconsole.exe pour appliquer un script à un dossier.
   rem Coller ce fichier à coté du .scr dans le dossier cible.
   rem Renommer ce fichier selon le .scr
   cd "%~dp0"
@@ -72,7 +84,7 @@ Le simple fait de l'exécuter dans la console, affichera les commutateurs de lig
 
 3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système (optionnel, langue utilisé par Autocad par defaut).
 
-4) /isolate : utilisé pour empêcher les modifications apportées aux variables système d'affecter AutoCAD normal.(optionnel)
+4) /isolate : Utilisé pour empêcher les modifications apportées aux variables système d'affecter AutoCAD normal.(optionnel)
 
 5) /readonly : permet de spécifier que le fichier DWG doit être ouvert en lecture seule (optionnel, apparu avec la version 2015)
 
