@@ -76,7 +76,7 @@ Le simple fait de l'exécuter dans la console, affichera les commutateurs de lig
 
 5) /readonly : permet de spécifier que le fichier DWG doit être ouvert en lecture seule (optionnel, apparu avec la version 2015)
 
-6) /p[rofile] permet de spécifier le nom d'un profil AutoCAD à utiliser lors de l'ouverture du fichier DWG. (optionnel, apparu avec la version 2015)
+6) /p[rofile] permet de spécifier le nom d'un profil AutoCAD à utiliser lors de l'ouverture du fichier DWG. (optionnel, apparu avec la version 2015, profil courant dans Autocad par défaut.)
 
 Pour raccourcir nos futurs scripts, en démarrant cmd.exe en tant qu'administrateur nous pouvons rajouter le dossier au Path Windows comme ceci.
 
