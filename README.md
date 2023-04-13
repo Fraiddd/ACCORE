@@ -160,7 +160,9 @@ Si vous éditer des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave e
 
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
 
-Vous pouvez utiliser de l'Autolisp, mais pas les API's externes.
+Vous pouvez utiliser de l'Autolisp, mais pas les API's externes. Si vous voulez utiliser un lisp complexe un l'intérieur d'un script vous risquer de rencontrer des problemes de synchronisations.
+
+Séparer les taches entre Accoreconsole et [ObjectDBX](https://github.com/Fraiddd/ODBX_LIB) est parfois la meilleurs solutions.
 
 ### .bat
 
