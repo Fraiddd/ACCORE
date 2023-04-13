@@ -14,8 +14,8 @@
 
 ## Avertissements
 
-  Attention !!! Ceci est destiné aux Responsables de bureau d'études, cad manager, gestionnaires de big datas...
-  Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner de dommages irréparrables.
+  Attention !!! Ceci est destiné aux Responsables de Bureau d'Etudes, Cad Manager, gestionnaires de Big Datas...
+  Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner des dommages irréparrables.
 
 ## Installation
 
@@ -194,10 +194,12 @@ Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la conso
 %~n0 correspond au nom du .bat qui s'execute.
 
 Donc dans le .bat
+
 ```
 cd "%~dp0"
 
 for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s "%~n0.scr"
+
 ```
 
 Pour les détails d'utilisation de la commande FOR et dir, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
@@ -280,7 +282,7 @@ Ici, pas besoin qu'Autocad soit démarré, juste installé ainsi que Python.
 
 Pourquoi utiliser Python?
 
-Je reponderais pourquoi pas?
+Je reponderais pourquoi pas? C'est pour donner un exemple d'utilisation avec un langage 
 
 Le lanceur de base:
 
@@ -290,7 +292,7 @@ import os
 os.startfile("c:\Data\TMP\dwg\cl0Zet.bat")
 
 ```
-Le lanceur sans la console (mais le déroulement des commandes apparais dans le terminal Python):
+Le lanceur propre, sans la console (mais le déroulement des commandes apparais dans le terminal Python):
 
 ```
 import subprocess
@@ -309,9 +311,12 @@ Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" not
 
 # Pour allez plus loin
 
+  ## Préparation
+
   L'inscrition de chemin d'accoreconsole dans le PATH Windows est nécéssaire.
   
   Pour éviter d'éditer les fichiers ".bat", si on change d'Autocad ou de poste par exemple, voici un ".bat" qui s'en charge.
+
   ```
   REM Inscrit le chemin de accoreconsole dans le path Windows.
   setlocal EnableDelayedExpansion
@@ -319,7 +324,9 @@ Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" not
   set "ACAD_PATH=!ACAD_PATH:~0,-1!"
   setx Path "%Path%;%ACAD_PATH%"
   endlocal
+
   ```
+
 ## .scr
 
   Les commandes Autocad utilisables dans les scripts envoyés dans accoreconsole sont disponibles sur ce [site](https://through-the-interface.typepad.com/through_the_interface/2012/03/commands-that-work-in-the-autocad-2013-core-console.html).
