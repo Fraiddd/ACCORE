@@ -220,7 +220,7 @@ Si vraiment vous voulez allez aussi dans les sous-dossier il faut rajouter /s ap
 
 Rien à changer dans le scr.
 
-Double-cliquez sur le .bat, la console s'ouvre le temps que tous les dossiers soient traités.
+Double-cliquez sur le .bat, la console s'ouvre le temps que tous les fichiers soient traités.
 
 Si certain apprécient l'apparition de la console, ce n'est pas mon cas. On verra qu'en Autolisp et Python nous pouvons la cacher.
 
