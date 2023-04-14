@@ -1,0 +1,5 @@
+;Rend le calque "0" courant, scu général, et sauve
+(setvar 'clayer "0")
+scu
+g
+_qsave
