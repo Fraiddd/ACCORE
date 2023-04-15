@@ -30,7 +30,7 @@
 
       - SECURELOAD à 0
 
-      - Ajouter l'emplacement du dossier contenant les dwg dans TRUSTEDPATHS
+      - Ajouter l'emplacement du dossier contenant les dwg dans TRUSTEDPATHS.
 
   - Si vous insérer de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, le désactiver pendant le traitement.
 
@@ -242,7 +242,9 @@ Non recommandé !!! Dans une boucle foreach
 ```
 Ici l'accoreconsole s'ouvre autant de fois qu'il y a de fichiers à traiter.
 
-De plus, le lisp s'arrette alors que plein de consoles restent ouvertes tant que le script n'est pas terminé. Une horreur ....
+De plus, le lisp s'arrette alors que plein de consoles restent ouvertes tant que le script n'est pas terminé. 
+
+Une horreur ....
 
 Autolisp peut-être utilisé pour lancer le .bat, ce qui est une méthode plus propre.
 
@@ -306,7 +308,7 @@ import os
 os.startfile("c:\Data\TMP\dwg\cl0Zet.bat")
 
 ```
-Le lanceur propre, sans la console (mais le déroulement des commandes apparais dans le terminal Python):
+Le lanceur propre, sans la console (mais le déroulement des commandes apparais dans le terminal Python:
 
 ```
 import subprocess
