@@ -6,7 +6,7 @@
     (if (and
           (setq dir (acet-ui-pickdir "Choose the folder containing the DWGs" "c:\\"))
           (setq cpt (length (vl-directory-files dir "*.dwg" 1)))
-          (setq scr (getfiled "Choose a Script" "c:\\Data\\git\\lsp\\ACCORE\\scr\\" "scr" 4))
+          (setq scr (getfiled "Choose a Script" "c:\\Data\\scr\\" "scr" 4))
         )
 		(progn
 			(setq bat (open dirbat "w"))
