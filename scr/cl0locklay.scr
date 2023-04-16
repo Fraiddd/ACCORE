@@ -1,7 +1,0 @@
-;Rend le calque "0" courant, vérouille tous les calques, et sauve
-(setvar 'clayer "0")
-_-layer
-v
-*
- 
-_qsave
