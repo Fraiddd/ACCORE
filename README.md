@@ -26,7 +26,7 @@
   - Ajouter l'emplacement d'Accoreconsole.exe dans le PATH Windows. 
     Voir [ici](#_) et [la](#préparation)
 
-  - Modifier les variables systèmes du profil utilisé par Accoreconsole.exe.
+  - Modifier les variables systèmes du profil utilisé par Accoreconsole.exe si votre version est 2015 et +.
 
       - SECURELOAD à 0
 
@@ -34,11 +34,14 @@
 
   - Si vous insérer de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, le désactiver pendant le traitement.
 
+  
 ## Présentation
 
   Depuis la version 2013, toutes les versions AutoCAD (LT comprise) disposent d'une version en ligne de commande qui peut vous aider à accélérer considérablement le traitement par lots des dessins DWG, DWT et DXF en complément d'[ObjectDBX](https://github.com/Fraiddd/ODBX_LIB).
 
   Accoreconsole est un outil destiné à modifier des centaines de fichiers. Si vous avez moins de cent fichiers, préférer des lanceurs de script comme [scriptpro](https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/7xKPXzhEGzvnF4qzy2Ddi9.html), ou [SuperAutoScript](https://www.caderix.com/telechargement_autocad.html).
+
+  Avec l'arrivé de la variable système TRUSTEDPATH avec la version 2014, Autodesk à revue sa copie avec accoreconsole 2015 en rajoutant la possibilité de changer de profil et ainsi de TRUSTEDPATH et cela en toute intimité.
 
   Non officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
 
@@ -63,7 +66,7 @@
 
 # Principes d'utilisation
 
-Vous adapterez ce qui suit à votre environnement et vos besoins.
+Vous adapterez ce qui suit à votre environnement et vos besoins (évitez les accents dans les noms de dossiers et fichiers).
 
 ## Ligne de commande
 
@@ -203,6 +206,7 @@ Créer un dossier contenant une dizaine de dwg. Y placer vos .bat et .scr qu'on 
 
 Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier ou se trouve le .bat avec la commande 'cd %~dp0' puis lancer notre script.
 
+%~dp0 correspond au dossier ou ce situe le .bat
 %~n0 correspond au nom du .bat qui s'execute.
 
 Donc dans le .bat
@@ -289,6 +293,15 @@ Pour avoir plus de contrôles sur l'ouverture de la console nous pouvons utilise
 On l'utilise de cette manière (run "c:\\Data\\TMP\\dwg\\cl0Zet.bat")
 
 La console n'apparaît pas, mais fait le travail tout de même.
+
+Un exemple d'utilisation avec un environnement different.
+
+Ici les .scr sont dans un dossier. Le .bat sera écrit par le lisp.
+
+```
+
+
+```
 
 ## Python
 
