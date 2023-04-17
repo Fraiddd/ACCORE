@@ -348,7 +348,7 @@ import os
 os.startfile("c:\Data\TMP\dwg\cl0Zet.bat")
 
 ```
-Le lanceur propre, sans la console (mais le déroulement des commandes apparaît dans le terminal Python:
+Le lanceur propre, sans la console (mais le déroulement des commandes apparaît dans le terminal Python)
 
 ```
 import subprocess
