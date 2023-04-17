@@ -16,7 +16,7 @@
 '''
 from tkinter import Tk, filedialog
 from subprocess import Popen
-from os import path, listdir
+from os import path, listdir, devnull
 
 
 def accore():
@@ -46,7 +46,7 @@ def accore():
                     do accoreconsole.exe /i "%%f" /s {scr}')
             try:
                 # Launch the .bat.
-                with open(os.devnull,'w') as null:
+                with open(devnull,'w') as null:
                     process = Popen(bat)
                     process.communicate(input='x'.encode())[0]
                 print(f"\nSuccessful processing for {nbdwg} files.")
