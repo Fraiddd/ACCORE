@@ -298,6 +298,8 @@ Un exemple d'utilisation avec un environnement différent.
 
 Ici les .scr sont dans un dossier. Le .bat sera écrit par le lisp.
 
+A partir de là, plus besoin que le dossier de dessins soit appouvé par Autocad, et la variable système SECUREPATH est ignorée.
+
 ```
 (defun c:accore (/ dir scr bat dirbat cpt)
     (setq dirbat "c:\\Data\\TMP\\temp.bat") 
@@ -363,6 +365,54 @@ Des détails sur l'utilisation des [subprocess](https://peps.python.org/pep-0324
 
 
 Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" notre lanceur par des invites utilisateurs, des compteurs et une gestion des erreurs.
+
+```
+from tkinter import Tk, filedialog
+from subprocess import Popen
+from os import path, listdir, devnull
+
+
+def accore():
+    bat = "c:/Data/TMP/temp.bat"
+    # Files explorer
+    root = Tk()
+    # Hides the root window.
+    root.withdraw()
+    # Select DWG directory.
+    dwg_path = filedialog.askdirectory(initialdir = 'c:/Data/TMP',
+                                        title = 'Select DWG directory')
+    if dwg_path:
+        # Select SCR file.
+        scr = filedialog.askopenfilenames(initialdir = 'c:/Data/scr',
+                                      title = 'Select SCR file',
+                                      filetypes = [('SCR files', '*.scr')])[0]
+        # Number of dwgs in the directory
+        nbdwg = len([f for f in listdir(dwg_path) 
+                        if path.isfile(path.join(dwg_path, f)) 
+                        and f.endswith('.dwg')])
+    if scr and nbdwg > 0:
+        try:
+            # Write the .bat.
+            with open(bat, "w") as f:
+                f.write(f'\
+                    @echo off\nchcp 1252\ncd {dwg_path}\
+                    \nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') \
+                    do accoreconsole.exe /i "%%f" /s {scr}')
+            try:
+                # Launch the .bat.
+                with open(devnull,'w') as null:
+                    process = Popen(bat)
+                    process.communicate(input='x'.encode())[0]
+                print(f"\nSuccessful processing for {nbdwg} files.")
+            except:
+                print("\nProcessing Failure. Check your script.")
+        except:
+            print("\nWriting Failure. Check your permissions.")
+    else:
+        print("\n->Abort, no dwg or Unknown Error.<-")
+
+accore()
+```
 
 
 # Pour allez plus loin

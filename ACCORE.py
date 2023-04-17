@@ -28,16 +28,17 @@ def accore():
     # Select DWG directory.
     dwg_path = filedialog.askdirectory(initialdir = 'c:/Data/TMP',
                                         title = 'Select DWG directory')
-    # Select SCR file.
-    scr = filedialog.askopenfilenames(initialdir = 'c:/Data/scr',
+    if dwg_path:
+        # Select SCR file.
+        scr = filedialog.askopenfilenames(initialdir = 'c:/Data/scr',
                                       title = 'Select SCR file',
                                       filetypes = [('SCR files', '*.scr')])[0]
-    if dwg_path and scr:
+        # Number of dwgs in the directory
+        nbdwg = len([f for f in listdir(dwg_path) 
+                        if path.isfile(path.join(dwg_path, f)) 
+                        and f.endswith('.dwg')])
+    if scr and nbdwg > 0:
         try:
-            # Number of dwgs in the directory
-            nbdwg = len([f for f in listdir(dwg_path) 
-                         if path.isfile(path.join(dwg_path, f)) 
-                         and f.endswith('.dwg')])
             # Write the .bat.
             with open(bat, "w") as f:
                 f.write(f'\
@@ -55,6 +56,6 @@ def accore():
         except:
             print("\nWriting Failure. Check your permissions.")
     else:
-        print("\n->Abort, or Unknown Error.<-")
+        print("\n->Abort, no dwg or Unknown Error.<-")
 
 accore()
