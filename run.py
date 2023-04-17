@@ -20,23 +20,26 @@ import os
 
 
 def run():
+    bat = "c:/Data/TMP/temp.bat"
     # Files explorer
     root = Tk()
     # Hides the root window.
     root.withdraw()
-    dwg_path = filedialog.askdirectory(initialdir = 'c:/Data/TMP/dwg',
+    dwg_path = filedialog.askdirectory(initialdir = 'c:/Data/TMP',
                                         title = 'Select DWG directory')
 
     scr = filedialog.askopenfilenames(initialdir = 'c:/Data/git/lsp/ACCORE/scr',
                                       title = 'Select SCR files',
                                       filetypes = [('SCR files', '*.scr')])[0]
-
-    print(dwg_path, scr)
-
-    # with open("c:/Data/TMP/temp.bat", "w") as f:
-    #     f.write('@echo off\ncd "%~dp0"\nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') do accoreconsole.exe /i "%%f" /s "%~n0.scr"')
-    # with open(os.devnull,'w') as null:
-    #     process = subprocess.Popen(dir + name + ".bat")
-    #     process.communicate(input='x'.encode())[0]
+    # Write the .bat
+    with open(bat, "w") as f:
+        f.write(f'\
+            @echo off\ncd {dwg_path}\
+            \nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') \
+            do accoreconsole.exe /i "%%f" /s {scr}')
+    
+    with open(os.devnull,'w') as null:
+        process = subprocess.Popen(bat)
+        process.communicate(input='x'.encode())[0]
 
 run()
