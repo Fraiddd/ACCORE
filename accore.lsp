@@ -26,14 +26,15 @@
           (setq scr (getfiled "Choose a Script" "c:\\Data\\scr\\" "scr" 4))
         )
         (progn
-			
+            
             (setq bat (open dirbat "w"))
-            (write-line (strcat "@echo off\nchcp 1252\ncd \""
-                            dir 
-                            "\"\nfor /f \"delims=\" %%f IN ('dir /b \"*.dwg\"') do accoreconsole.exe /i \"%%f\" /s \"" 
-                            scr 
-                            "\"\n")
-                            bat)
+            (write-line (strcat 
+                "@echo off\nchcp 1252\ncd \""
+                dir 
+                "\"\nfor /f \"delims=\" %%f IN ('dir /b \"*.dwg\"') do accoreconsole.exe /i \"%%f\" /s \"" 
+                scr 
+                "\"\n")
+                bat)
             (close bat)
             (if (run dirbat)
                 (princ (strcat "\nSuccessful processing for "(itoa cpt)" files."))
