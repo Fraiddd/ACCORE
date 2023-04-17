@@ -14,15 +14,29 @@
     :No copyright: (!) 2023 by Frédéric Coulon.
     :No license: Do with it what you want.
 '''
-
+from tkinter import Tk, filedialog, messagebox as mb
 import subprocess
 import os
 
-def run(name, dir):
-    with open(dir + name + ".bat", "w") as f:
-        f.write('cd %~dp0\nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') do accoreconsole.exe /i "%%f" /s %~n0.scr')
-    with open(os.devnull,'w') as null:
-        process = subprocess.Popen(dir + name + ".bat")
-        process.communicate(input='x'.encode())[0]
 
-run('cl0Zet', 'c:\Data\TMP\dwg\\')
+def run():
+    # Files explorer
+    root = Tk()
+    # Hides the root window.
+    root.withdraw()
+    dwg_path = filedialog.askdirectory(initialdir = 'c:/Data/TMP/dwg',
+                                        title = 'Select DWG directory')
+
+    scr = filedialog.askopenfilenames(initialdir = 'c:/Data/git/lsp/ACCORE/scr',
+                                      title = 'Select SCR files',
+                                      filetypes = [('SCR files', '*.scr')])[0]
+
+    print(dwg_path, scr)
+
+    # with open("c:/Data/TMP/temp.bat", "w") as f:
+    #     f.write('@echo off\ncd "%~dp0"\nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') do accoreconsole.exe /i "%%f" /s "%~n0.scr"')
+    # with open(os.devnull,'w') as null:
+    #     process = subprocess.Popen(dir + name + ".bat")
+    #     process.communicate(input='x'.encode())[0]
+
+run()
