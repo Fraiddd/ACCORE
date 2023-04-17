@@ -32,21 +32,21 @@ def accore():
     scr = filedialog.askopenfilenames(initialdir = 'c:/Data/scr',
                                       title = 'Select SCR file',
                                       filetypes = [('SCR files', '*.scr')])[0]
-    # Write the .bat.
     if dwg_path and scr:
         try:
             nbdwg = len([f for f in os.listdir(dwg_path) if os.path.isfile(os.path.join(dwg_path, f)) and f.endswith('.dwg')])
+            # Write the .bat.
             with open(bat, "w") as f:
                 f.write(f'\
                     @echo off\nchcp 1252\ncd {dwg_path}\
                     \nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') \
                     do accoreconsole.exe /i "%%f" /s {scr}')
-                print(f"\nSuccessful processing for {nbdwg} files.")
             try:
                 # Launch the .bat.
                 with open(os.devnull,'w') as null:
                     process = subprocess.Popen(bat)
                     process.communicate(input='x'.encode())[0]
+                print(f"\nSuccessful processing for {nbdwg} files.")
             except:
                 print("\nProcessing Failure. Check your script.")
         except:
