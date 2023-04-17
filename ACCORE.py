@@ -3,20 +3,20 @@
 '''
     ACCORE 1.0
 
-    Démarre accoreconsole.exe
+    Launch accoreconsole.exe
 
-    - Pas installation.
+    - No install
 
-    - Seulement pour Windows
+    - Only for Windows
 
-    - Testé avec Windows 10 et Autocad 2015
+    - Tested with Windows 10 and Autocad 2015
 
     :No copyright: (!) 2023 by Frédéric Coulon.
     :No license: Do with it what you want.
 '''
-from tkinter import Tk, filedialog, messagebox as mb
-import subprocess
-import os
+from tkinter import Tk, filedialog
+from subprocess import Popen
+from os import path, listdir
 
 
 def accore():
@@ -34,7 +34,10 @@ def accore():
                                       filetypes = [('SCR files', '*.scr')])[0]
     if dwg_path and scr:
         try:
-            nbdwg = len([f for f in os.listdir(dwg_path) if os.path.isfile(os.path.join(dwg_path, f)) and f.endswith('.dwg')])
+            # Number of dwgs in the directory
+            nbdwg = len([f for f in listdir(dwg_path) 
+                         if path.isfile(path.join(dwg_path, f)) 
+                         and f.endswith('.dwg')])
             # Write the .bat.
             with open(bat, "w") as f:
                 f.write(f'\
@@ -44,7 +47,7 @@ def accore():
             try:
                 # Launch the .bat.
                 with open(os.devnull,'w') as null:
-                    process = subprocess.Popen(bat)
+                    process = Popen(bat)
                     process.communicate(input='x'.encode())[0]
                 print(f"\nSuccessful processing for {nbdwg} files.")
             except:
