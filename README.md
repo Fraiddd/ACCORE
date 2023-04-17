@@ -309,11 +309,11 @@ Ici les .scr sont dans un dossier. Le .bat sera écrit par le lisp.
 		(progn
 			(setq bat (open dirbat "w"))
 			(write-line (strcat "@echo off\nchcp 1252\ncd \""
-							dir 
-							"\"\nfor /f \"delims=\" %%f IN ('dir /b \"*.dwg\"') do accoreconsole.exe /i \"%%f\" /s \"" 
-							scr 
-							"\"\n")
-							bat)
+              dir 
+              "\"\nfor /f \"delims=\" %%f IN ('dir /b \"*.dwg\"') do accoreconsole.exe /i \"%%f\" /s \"" 
+              scr 
+	              "\"\n")
+              bat)
 			(close bat)
 			(if (run dirbat)
 				(princ (strcat "\nSuccessful processing for "(itoa cpt)" files."))
