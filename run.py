@@ -25,19 +25,20 @@ def run():
     root = Tk()
     # Hides the root window.
     root.withdraw()
+    # Select DWG directory.
     dwg_path = filedialog.askdirectory(initialdir = 'c:/Data/TMP',
                                         title = 'Select DWG directory')
-
+    # Select SCR file.
     scr = filedialog.askopenfilenames(initialdir = 'c:/Data/git/lsp/ACCORE/scr',
-                                      title = 'Select SCR files',
+                                      title = 'Select SCR file',
                                       filetypes = [('SCR files', '*.scr')])[0]
-    # Write the .bat
+    # Write the .bat.
     with open(bat, "w") as f:
         f.write(f'\
-            @echo off\ncd {dwg_path}\
+            @echo off\nchcp 1252\ncd {dwg_path}\
             \nfor /f "delims=" %%f IN (\'dir /b "*.dwg"\') \
             do accoreconsole.exe /i "%%f" /s {scr}')
-    
+    # Launch the .bat.
     with open(os.devnull,'w') as null:
         process = subprocess.Popen(bat)
         process.communicate(input='x'.encode())[0]
