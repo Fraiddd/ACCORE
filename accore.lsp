@@ -26,7 +26,6 @@
           (setq scr (getfiled "Choose a Script" "c:\\Data\\scr\\" "scr" 4))
         )
         (progn
-            
             (setq bat (open dirbat "w"))
             (write-line (strcat 
                 "@echo off\nchcp 1252\ncd \""
