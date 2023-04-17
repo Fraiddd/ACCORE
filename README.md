@@ -4,7 +4,7 @@
 
   - Autocad (Version 2013 et +).
 
-  - Une bonne connaissance de ce derniers.
+  - Une bonne connaissance de ce dernier.
 
   - Savoir utiliser les lignes de commandes.
 
@@ -14,14 +14,14 @@
 
 ## Avertissements
 
-  Attention !!! Ceci est destiné aux Responsables de Bureau d'Etudes, Cad Manager, gestionnaires de Big Datas...
-  Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner des dommages irréparrables.
+  Attention !!! Ceci est destiné aux Responsables de Bureau d'Études, Cad Manager, gestionnaires de Big Datas...
+  Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner des dommages irréparables.
 
 ## Installation
 
-  Accoreconsole.exe ne demande pas d'installation, cela est fait en même temps qu'Autocad.
+  Accoreconsole.exe ne demande pas d'installation, cela est fait en même temps que Autocad.
 
-  Mais une préparation est nécéssaire, pour cela Vous devez être admisnistrateur de votre poste: 
+  Mais une préparation est nécessaire, pour cela Vous devez être administrateur de votre poste: 
 
   - Ajouter l'emplacement d'Accoreconsole.exe dans le PATH Windows. 
     Voir [ici](#_) et [la](#préparation)
@@ -32,7 +32,7 @@
 
       - Ajouter l'emplacement du dossier contenant les dwg dans TRUSTEDPATHS.
 
-  - Si vous insérer de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, le désactiver pendant le traitement.
+  - Si vous insérez de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, le désactiver pendant le traitement.
 
   
 ## Présentation
@@ -41,7 +41,7 @@
 
   Accoreconsole est un outil destiné à modifier des centaines de fichiers. Si vous avez moins de cent fichiers, préférer des lanceurs de script comme [scriptpro](https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/7xKPXzhEGzvnF4qzy2Ddi9.html), ou [SuperAutoScript](https://www.caderix.com/telechargement_autocad.html).
 
-  Avec l'arrivé de la variable système TRUSTEDPATH avec la version 2014, Autodesk à revue sa copie avec accoreconsole 2015 en rajoutant la possibilité de changer de profil et ainsi de TRUSTEDPATH et cela en toute intimité.
+  Avec l'arrivée de la variable système TRUSTEDPATH avec la version 2014, Autodesk à revue sa copie avec accoreconsole 2015 en ajoutant la possibilité de changer de profil et ainsi de TRUSTEDPATH et cela en toute intimité.
 
   Non officiellement supporté par Autodesk, il n'y a aucune documentation, alors je vous propose une petite immersion. 
 
@@ -56,7 +56,7 @@
   ```
   @echo off
   rem ACCOR.bat : Utilise accoreconsole.exe pour appliquer un script à un dossier.
-  rem Coller ce fichier à coté du .scr dans le dossier cible.
+  rem Coller ce fichier à côté du .scr dans le dossier cible.
   rem Renommer ce fichier selon le .scr
   cd "%~dp0"
   for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s "%~n0.scr"
@@ -90,7 +90,7 @@ Le simple fait de l'exécuter dans la console, affichera les commutateurs de lig
 
 2) /s : permet de spécifier le chemin d'accès au fichier de script. (requis)
 
-3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système (optionnel, langue utilisé par Autocad par defaut).
+3) /l : Si des packs de langue sont installés, vous avez le choix d'invoquer la version linguistique d'accoreconsole. Les commandes du fichier de script peuvent alors être dans l'une des langues que vous avez installées sur votre système (optionnel, langue utilisé par Autocad par défaut).
 
 4) /isolate : Utilisé pour empêcher les modifications apportées aux variables système d'affecter AutoCAD normal.(optionnel)
 
@@ -105,9 +105,9 @@ Pour raccourcir nos futurs scripts, en démarrant cmd.exe en tant qu'administrat
 
 Redémarrer la console pour la prise en compte. Maintenant, accoreconsole.exe suffira pour l'appeler dans la console.
 
-Il est conseillé de faire des essais, et de sauvegarder son travail en prévention, même si un .bak est créer. Nous éviterons aussi de modifier des fichiers de façon récursive (dans les sous-dossiers).
+Il est conseillé de faire des essais, et de sauvegarder son travail en prévention, même si un .bak est créé. Nous éviterons aussi de modifier des fichiers de façon récursive (dans les sous-dossiers).
 
-Mais avant cela testons comment nous pouvons dessiner directement dans la console. 
+Mais avant cela, testons comment nous pouvons dessiner directement dans la console. 
 
 Un rectangle de 100x100.
 
@@ -126,7 +126,7 @@ Plusieurs constats:
   - Ne demande pas d'enregistrer avant de quitter (il ne faut donc pas oublier de sauver). 
 
 
-Pour l'utilisation directe dans la console, je vais m'arrêter la, car c'est en script que c'est le plus intéressant.
+Pour l'utilisation directe dans la console, je vais m'arrêter là, car c'est en script que c'est le plus intéressant.
 
 ## .bat et .scr 
 
@@ -136,11 +136,11 @@ Les fichiers batch (".bat") et les fichiers de script (".scr") sont des fichiers
 
 Ce sont de simples fichiers texte ASCII (utf-8 pour le .bat) que vous pouvez éditer avec Notepad ou votre éditeur de texte simple préféré. (Si vous utilisez PowerShell, remplacez .bat par .ps1.)
 
-Plaçons un dwg nommé "Test.dwg", avec un objet et un calque "Test" courant, dans un dossier "C:\Data" que l'on rajoutera aux dossiers approuvés par Autocad (important! sinon il n'y auras pas de sauvegarde).
+Plaçons un dwg nommé "Test.dwg", avec un objet et un calque "Test" courant, dans un dossier "C:\Data" que l'on ajoute aux dossiers approuvés par Autocad (important! sinon il n'y aura pas de sauvegarde).
 
 ### .scr
 
-Créons un fichier texte dans le même dossier que nous enregistrerons en "Test.scr" dans lequel nous écrivons le script.
+Créons un fichier texte dans le même dossier que nous enregistrons en "Test.scr" dans lequel nous écrivons le script.
 
   - Rendre le calque "0" courant.
 
@@ -159,13 +159,13 @@ Plus d'infos sur l'écriture des ".scr" [l'aides des développeurs.](https://hel
 
 Et quelques exemples [ici](scr/)
 
-Si vous éditer des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave et il seras enregistrer en .dwg.
+Si vous éditez des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave et il sera enregistré en .dwg.
 
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
 
-Vous pouvez utiliser de l'Autolisp, mais pas les API's externes. Si vous voulez utiliser un lisp complexe un l'intérieur d'un script vous risquer de rencontrer des problemes de synchronisations.
+Vous pouvez utiliser de l'Autolisp, mais pas les API's externes. Si vous voulez utiliser un lisp complexe un l'intérieur d'un script vous risquez de rencontrer des problèmes de synchronisation.
 
-Séparer les taches entre Accoreconsole et [ObjectDBX](https://github.com/Fraiddd/ODBX_LIB) est parfois la meilleurs solutions.
+Séparer les taches entre Accoreconsole et [ObjectDBX](https://github.com/Fraiddd/ODBX_LIB) est parfois la meilleure solution.
 
 ### .bat
 
@@ -177,7 +177,7 @@ Qui lance accoreconsole.exe, avec le dessin "C:\Data\Test.dwg" et applique le sc
 
 Si les chemins contiennent des espaces, il faut les entourer par des guillemets.
 
-Si vous n'utilsez jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le type de fichiers soit bien "Fichier de commande Windows (.bat)". Si ce n'est pas le cas, ouvrez cmd.exe an tant qu'administrateur et saisissez ceci et fermez la console.
+Si vous n'utilisez jamais de ".bat", vous pouvez vérifier avec un clic droit/Propriétés que le type de fichiers est bien "Fichier de commande Windows (.bat)". Si ce n'est pas le cas, ouvrez cmd.exe en tant qu'administrateur et saisissez ceci et fermez la console.
 ```
 assoc .bat=cmdfile
 ftype cmdfile=C:\Windows\System32\cmd.exe /k "%1" %*
@@ -186,11 +186,11 @@ On double clic sur Test.bat
 
 La console s'ouvre pendant une seconde et se referme.
 
-Un fichier .bak est apparu. Si cela procure une sécurité, attention, cela double aussi la place que prend votre dossier si il ne contenais pas de .bak.
+Un fichier .bak est apparu. Si cela procure une sécurité, attention, cela double aussi la place que prend votre dossier s' il ne contenais pas de .bak.
 
 Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été effectué.
 
-Voyons maintenant comment modifier tout les dwg d'un dossier.
+Voyons maintenant comment modifier tous les dwg d'un dossier.
 
 Pour cela nous utiliserons trois solutions.
 
@@ -207,7 +207,7 @@ Créer un dossier contenant une dizaine de dwg. Y placer vos .bat et .scr qu'on 
 Toujours pour alléger l'écriture, nous allons placer le "pointeur" de la console sur le dossier ou se trouve le .bat avec la commande 'cd %~dp0' puis lancer notre script.
 
 %~dp0 correspond au dossier ou ce situe le .bat
-%~n0 correspond au nom du .bat qui s'execute.
+%~n0 correspond au nom du .bat qui s'exécute.
 
 Donc dans le .bat
 
@@ -226,7 +226,7 @@ Rien à changer dans le scr.
 
 Double-cliquez sur le .bat, la console s'ouvre le temps que tous les fichiers soient traités.
 
-Si certain apprécient l'apparition de la console, ce n'est pas mon cas. On verra qu'en Autolisp et Python nous pouvons la cacher.
+Si certains apprécient l'apparition de la console, ce n'est pas mon cas. On verra qu'en Autolisp et Python nous pouvons la cacher.
 
 ## Autolisp / Visual-Lisp
 
@@ -246,7 +246,7 @@ Non recommandé !!! Dans une boucle foreach
 ```
 Ici l'accoreconsole s'ouvre autant de fois qu'il y a de fichiers à traiter.
 
-De plus, le lisp s'arrette alors que plein de consoles restent ouvertes tant que le script n'est pas terminé. 
+De plus, le lisp s'arrête alors que plein de consoles restent ouvertes tant que le script n'est pas terminé. 
 
 Une horreur ....
 
@@ -292,9 +292,9 @@ Pour avoir plus de contrôles sur l'ouverture de la console nous pouvons utilise
 ```
 On l'utilise de cette manière (run "c:\\Data\\TMP\\dwg\\cl0Zet.bat")
 
-La console n'apparaît pas, mais fait le travail tout de même.
+La console n'apparaît pas, mais fait tout de même le travail.
 
-Un exemple d'utilisation avec un environnement different.
+Un exemple d'utilisation avec un environnement différent.
 
 Ici les .scr sont dans un dossier. Le .bat sera écrit par le lisp.
 
@@ -332,11 +332,11 @@ CHCP 1252 à été rajouté au .bat pour éviter des erreurs dûes aux éventuel
 
 ## Python
 
-Ici, pas besoin qu'Autocad soit démarré, juste installé ainsi que Python.
+Ici, pas besoin que Autocad soit démarré, juste installé ainsi que Python.
 
 Pourquoi utiliser Python?
 
-Je reponderais pourquoi pas? C'est pour donner un exemple d'utilisation avec un autre langage.
+Je répondrais pourquoi pas? C'est pour donner un exemple d'utilisation avec un autre langage.
 
 Vous pouvez aussi utiliser le VBA ou .NET, mais ce n'est pas aussi simple qu'en Python de lancer un SubProcess.
 
@@ -348,7 +348,7 @@ import os
 os.startfile("c:\Data\TMP\dwg\cl0Zet.bat")
 
 ```
-Le lanceur propre, sans la console (mais le déroulement des commandes apparais dans le terminal Python:
+Le lanceur propre, sans la console (mais le déroulement des commandes apparaît dans le terminal Python:
 
 ```
 import subprocess
@@ -369,7 +369,7 @@ Nous allons pouvoir, tout comme nous pouvons le faire en Autolisp, "enrober" not
 
   ## Préparation
 
-  L'inscrition de chemin d'accoreconsole dans le PATH Windows est nécéssaire.
+  L'inscription de chemin d'accoreconsole dans le PATH Windows est nécessaire.
   
   Pour éviter d'éditer les fichiers ".bat", si on change d'Autocad ou de poste par exemple, voici un ".bat" qui s'en charge.
 
