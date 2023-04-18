@@ -14,25 +14,27 @@
 
 ## Avertissements
 
-  Attention !!! Ceci est destiné aux Responsables de Bureau d'Études, Cad Manager, gestionnaires de Big Datas...
+  Attention !!! Ceci est destiné aux Responsables de Bureau d'Études, Cad Manager, gestionnaires de Big Datas, geek Xandarien ...
   Si vous ne comprenez pas ce que vous faites, surtout, ne faites rien. Vous pourriez occasionner des dommages irréparables.
 
 ## Installation
 
   Accoreconsole.exe ne demande pas d'installation, cela est fait en même temps que Autocad.
 
-  Mais une préparation est nécessaire, pour cela Vous devez être administrateur de votre poste: 
+  Mais une préparation est nécessaire pour lancer directement Accoreconsole avec un .bat.
+  
+  - Vous devez être administrateur de votre poste.
 
   - Ajouter l'emplacement d'Accoreconsole.exe dans le PATH Windows. 
     Voir [ici](#_) et [la](#préparation)
 
   - Modifier les variables systèmes du profil utilisé par Accoreconsole.exe si votre version est 2015 et +.
 
-      - SECURELOAD à 0
+      - SECURELOAD à 0 (pas sûre que cela serve à quelque chose)
 
-      - Ajouter l'emplacement du dossier contenant les dwg dans TRUSTEDPATHS.
+      - Ajouter l'emplacement du dossier contenant les dwgs dans TRUSTEDPATHS.
 
-  - Si vous insérez de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, le désactiver pendant le traitement.
+  - Si vous insérez de l'Autolisp dans votre script, il peut arriver que votre antivirus se réveille. Dans ce cas, approuvez sont exécution.
 
   
 ## Présentation
@@ -298,7 +300,7 @@ Un exemple d'utilisation avec un environnement différent.
 
 Ici les .scr sont dans un dossier. Le .bat sera écrit par le lisp.
 
-A partir de là, plus besoin que le dossier de dessins soit appouvé par Autocad, et la variable système SECUREPATH est ignorée.
+A partir de là, plus besoin que le dossier de dessins soit approuvé par Autocad, et la variable système SECUREPATH est ignorée.
 
 ```
 (defun c:accore (/ dir scr bat dirbat cpt)
@@ -327,10 +329,10 @@ A partir de là, plus besoin que le dossier de dessins soit appouvé par Autocad
     )
     (princ)
 )
-)
 
 ```
-CHCP 1252 à été rajouté au .bat pour éviter des erreurs dûes aux éventuels accents, plutôt que de convertir le .bat en utf-8.
+
+CHCP 1252 à été rajouté au .bat pour éviter des erreurs dues aux éventuels accents, plutôt que de convertir le .bat en utf-8.
 
 ## Python
 
