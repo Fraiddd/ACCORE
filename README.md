@@ -373,17 +373,17 @@ from os import path, listdir, devnull
 
 
 def accore():
-    bat = "c:/Data/TMP/temp.bat"
+    bat = getcwd() + "/temp.bat"
     # Files explorer
     root = Tk()
     # Hides the root window.
     root.withdraw()
     # Select DWG directory.
-    dwg_path = filedialog.askdirectory(initialdir = 'c:/Data/TMP',
+    dwg_path = filedialog.askdirectory(initialdir = 'c:/',
                                         title = 'Select DWG directory')
     if dwg_path:
         # Select SCR file.
-        scr = filedialog.askopenfilenames(initialdir = 'c:/Data/scr',
+        scr = filedialog.askopenfilenames(initialdir = 'c:/',
                                       title = 'Select SCR file',
                                       filetypes = [('SCR files', '*.scr')])[0]
         # Number of dwgs in the directory
