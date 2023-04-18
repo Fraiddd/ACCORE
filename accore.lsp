@@ -19,7 +19,7 @@
 ;(load "run.lsp")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun c:accore (/ dir scr bat dirbat cpt)
-    (setq dirbat "c:\\Data\\TMP\\temp.bat") 
+    (setq dirbat "c:\\Datas\\TMP\\temp.bat") 
     (if (and        
           (setq dir (acet-ui-pickdir "Choose the folder containing the DWGs" "c:\\")); Displays a directory selection dialog.
           (setq cpt (length (vl-directory-files dir "*.dwg" 1))); 
