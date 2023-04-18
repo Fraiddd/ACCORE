@@ -1,4 +1,6 @@
 dev/
+build/
 hist/
 Demo/
 test.py
+ACCORE.spec
