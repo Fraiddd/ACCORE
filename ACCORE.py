@@ -59,3 +59,5 @@ def accore():
         print("\n->Abort, no dwg or Unknown Error.<-")
 
 accore()
+
+# pyinstaller --noconsole --onefile ACCORE.py
