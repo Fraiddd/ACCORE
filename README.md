@@ -117,8 +117,6 @@ Un rectangle de 100x100.
 
 Plusieurs constats:
 
-  - Accepte les expressions lisp (setvar)
-
   - Double les messages de commande. (plutôt désagréable)
 
   - Accepte les commandes françaises. (une surprise)
