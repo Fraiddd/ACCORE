@@ -101,7 +101,7 @@ Le simple fait de l'exécuter dans la console, affichera les commutateurs de lig
 6) /p[rofile] permet de spécifier le nom d'un profil AutoCAD à utiliser lors de l'ouverture du fichier DWG. (optionnel, apparu avec la version 2015, profil courant dans Autocad par défaut.)
 
 # _
-Pour raccourcir nos futurs scripts, en démarrant cmd.exe en tant qu'administrateur nous pouvons rajouter le dossier au Path Windows comme ceci.
+Pour raccourcir nos futurs scripts, en démarrant cmd.exe en tant qu'administrateur nous pouvons ajouter le dossier au Path Windows comme ceci.
 
 ``` setx Path "%Path%;C:\Program Files\Autodesk\AutoCAD 2015" ```
 
