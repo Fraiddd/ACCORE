@@ -159,7 +159,7 @@ Plus d'infos sur l'écriture des ".scr" [l'aides des développeurs.](https://hel
 
 Et quelques exemples [ici](scr/)
 
-Si vous éditez des DXF, il faut rajouter 2 espaces sur 2 lignes après _qsave et il sera enregistré en .dwg.
+Si vous éditez des DXF, il faut ajouter 2 espaces sur 2 lignes après _qsave et il sera enregistré en .dwg.
 
 Les raccourcis (acad.pgp) ne sont pas pris en compte.
 
@@ -220,7 +220,7 @@ for /f "delims=" %%f IN ('dir /b "*.dwg"') do accoreconsole.exe /i "%%f" /s "%~n
 
 Pour les détails d'utilisation de la commande FOR et dir, voici un [lien](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for).
 
-Si vraiment vous voulez allez aussi dans les sous-dossier il faut rajouter /s après dir.
+Si vraiment vous voulez allez aussi dans les sous-dossiers, il faut ajouter /s après dir.
 
 Rien à changer dans le scr.
 

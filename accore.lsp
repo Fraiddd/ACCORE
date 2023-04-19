@@ -22,12 +22,12 @@
     (setq dirbat "temp.bat") 
     (if (and        
           (setq dir (acet-ui-pickdir "Choose the folder containing the DWGs" "c:\\")); Displays a directory selection dialog.
-          (setq cpt (length (vl-directory-files dir "*.dwg" 1))); 
-          (setq scr (getfiled "Choose a Script" "c:\\" "scr" 4))
+          (setq cpt (length (vl-directory-files dir "*.dwg" 1))); Get the number of dwgs.
+          (setq scr (getfiled "Choose a Script" "c:\\" "scr" 4)); Displays a files selection dialog.
         )
         (progn
-            (setq bat (open dirbat "w"))
-            (write-line (strcat 
+            (setq bat (open dirbat "w")); Create the .bat
+            (write-line (strcat         ; Writing
                 "@echo off\nchcp 1252\ncd \""
                 dir 
                 "\"\nfor /f \"delims=\" %%f IN ('dir /b \"*.dwg\"') do accoreconsole.exe /i \"%%f\" /s \"" 
@@ -35,7 +35,7 @@
                 "\"\n")
                 bat)
             (close bat)
-            (if (run dirbat)
+            (if (run dirbat); Launch the .bat
                 (princ (strcat "\nSuccessful processing for "(itoa cpt)" files."))
                 (princ "\nProcessing Failure. Check your script.")
             )
