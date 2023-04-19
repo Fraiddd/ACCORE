@@ -186,7 +186,7 @@ On double clic sur Test.bat
 
 La console s'ouvre pendant une seconde et se referme.
 
-Un fichier .bak est apparu. Si cela procure une sécurité, attention, cela double aussi la place que prend votre dossier s' il ne contenais pas de .bak.
+Un fichier .bak est apparu. Si cela procure une sécurité, attention, cela double aussi la place que prend votre dossier s' il ne contenais pas de .bak. Si vous voulez ne pas avoir de .bak, changer cette variable ISAVEBAK à 0.
 
 Si on ouvre Test.dwg, le calque courant est "0" et un zoom étendu à bien été effectué.
 
