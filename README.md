@@ -435,7 +435,7 @@ accore()
 
 ## .scr
 
-  Les commandes Autocad utilisables dans les scripts envoyés dans accoreconsole sont disponibles sur ce [site](https://through-the-interface.typepad.com/through_the_interface/2012/03/commands-that-work-in-the-autocad-2013-core-console.html).
+  Les commandes Autocad utilisables dans les scripts envoyés dans accoreconsole sont disponibles [ici](https://through-the-interface.typepad.com/files/Working%20Core%20Console%20commands.txt).
 
 
 (Edition en cours...)
